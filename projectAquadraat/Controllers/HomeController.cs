@@ -23,6 +23,26 @@ namespace projectAquadraat.Controllers
             return View();
         }
 
+        public IActionResult News()
+        {
+            return View();
+        }
+
+        public IActionResult Kalender()
+        {
+            return View();
+        }
+
+        public IActionResult MyTeams()
+        {
+            return View();
+        }
+
+        public IActionResult A2Ranking()
+        {
+            return View();
+        }
+
         public IActionResult Privacy()
         {
             return View();
