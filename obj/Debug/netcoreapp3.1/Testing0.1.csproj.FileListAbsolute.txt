@@ -366,9 +366,6 @@ C:\Users\Gebruiker\Documents\GitHub\ProjectWebapp2020\bin\Debug\netcoreapp3.1\ru
 C:\Users\Gebruiker\Documents\GitHub\ProjectWebapp2020\obj\Debug\netcoreapp3.1\Testing0.1.csprojAssemblyReference.cache
 C:\Users\Gebruiker\Documents\GitHub\ProjectWebapp2020\obj\Debug\netcoreapp3.1\Testing0.1.AssemblyInfoInputs.cache
 C:\Users\Gebruiker\Documents\GitHub\ProjectWebapp2020\obj\Debug\netcoreapp3.1\Testing0.1.AssemblyInfo.cs
-C:\Users\Gebruiker\Documents\GitHub\ProjectWebapp2020\obj\Debug\netcoreapp3.1\Testing0.1.csproj.CoreCompileInputs.cache
-C:\Users\Gebruiker\Documents\GitHub\ProjectWebapp2020\obj\Debug\netcoreapp3.1\Testing0.1.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\Gebruiker\Documents\GitHub\ProjectWebapp2020\obj\Debug\netcoreapp3.1\Testing0.1.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Gebruiker\Documents\GitHub\ProjectWebapp2020\obj\Debug\netcoreapp3.1\Testing0.1.RazorAssemblyInfo.cache
 C:\Users\Gebruiker\Documents\GitHub\ProjectWebapp2020\obj\Debug\netcoreapp3.1\Testing0.1.RazorAssemblyInfo.cs
 C:\Users\Gebruiker\Documents\GitHub\ProjectWebapp2020\obj\Debug\netcoreapp3.1\Testing0.1.TagHelpers.input.cache
@@ -416,3 +413,6 @@ C:\Users\Gebruiker\Documents\GitHub\ProjectWebapp2020\obj\Debug\netcoreapp3.1\st
 C:\Users\Gebruiker\Documents\GitHub\ProjectWebapp2020\obj\Debug\netcoreapp3.1\Testing0.1.dll
 C:\Users\Gebruiker\Documents\GitHub\ProjectWebapp2020\obj\Debug\netcoreapp3.1\Testing0.1.pdb
 C:\Users\Gebruiker\Documents\GitHub\ProjectWebapp2020\obj\Debug\netcoreapp3.1\Testing0.1.genruntimeconfig.cache
+C:\Users\Gebruiker\Documents\GitHub\ProjectWebapp2020\obj\Debug\netcoreapp3.1\Testing0.1.csproj.CoreCompileInputs.cache
+C:\Users\Gebruiker\Documents\GitHub\ProjectWebapp2020\obj\Debug\netcoreapp3.1\Testing0.1.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Gebruiker\Documents\GitHub\ProjectWebapp2020\obj\Debug\netcoreapp3.1\Testing0.1.MvcApplicationPartsAssemblyInfo.cache
