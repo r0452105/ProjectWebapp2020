@@ -149,5 +149,10 @@ namespace Testing0._1.Controllers
         {
             return _context.Gebruikers.Any(e => e.GebruikerID == id);
         }
+
+        public async Task<IActionResult> Ranking()
+        {
+            return View(await _context.Gebruikers.ToListAsync());
+        }
     }
 }

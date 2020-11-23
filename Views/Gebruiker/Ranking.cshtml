@@ -1,0 +1,43 @@
+﻿@model IEnumerable<Testing0._1.Models.Gebruiker>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Naam)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Voornaam)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nationaliteit)
+            </th>
+            <th>
+                Details
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.OrderBy(i => i.Naam))
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Naam)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Voornaam)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nationaliteit)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.GebruikerID">Bewerken -> nog te veranderen</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,4 +1,5 @@
-﻿@{
+﻿@model IEnumerable<Testing0._1.Models.Nieuwsartikel>
+@{
     ViewData["Title"] = "Home Page";
 }
 
@@ -12,20 +13,16 @@
 
 
 
-    <article>
-        <div>
-            <span>Nieuws</span>
-        </div>
-        <figure>
-            <img src="https://cdn.discordapp.com/attachments/691020039863664722/780145940312489984/corona.png" alt="lolzzz" />
-        </figure>
-        <div>
-            <div>
-                Aflasting Ronde Vna Veussel 2020 wegens coronamaatregelen.
-            </div>
-        </div>
-    </article>
+
+    @foreach (var item in Model)
+    {
+        if (item.NieuwsartikelID == 2)
+        {
+            
+        }
+    }
 
 
-    
+
+
 </div>
