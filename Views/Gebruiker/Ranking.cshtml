@@ -21,29 +21,28 @@
             <th>
                 Details
             </th>
-            <th></th>
         </tr>
     </thead>
-    <tbody>
+    <tbody> 
         @foreach (var item in Model.OrderByDescending(i => i.Score))
         {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Naam)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Voornaam)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nationaliteit)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Score)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.GebruikerID">Bewerken -> nog te veranderen</a>
-            </td>
-        </tr>
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Naam)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Voornaam)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nationaliteit)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Score)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.GebruikerID">Bewerken -> nog te veranderen</a>
+                </td>
+            </tr>
         }
     </tbody>
 </table>
