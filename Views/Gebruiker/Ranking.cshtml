@@ -25,7 +25,7 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in Model.OrderBy(i => i.Naam))
+        @foreach (var item in Model.OrderByDescending(i => i.Score))
         {
         <tr>
             <td>
