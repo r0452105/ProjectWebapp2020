@@ -10,14 +10,14 @@ using Testing0._1.Data;
 namespace Testing0._1.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20201121150936_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20201123072819_Migration2")]
+    partial class Migration2
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "3.1.8")
+                .HasAnnotation("ProductVersion", "3.1.10")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -237,6 +237,9 @@ namespace Testing0._1.Data.Migrations
 
                     b.Property<string>("Profielfoto")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Score")
+                        .HasColumnType("int");
 
                     b.Property<string>("Voornaam")
                         .HasColumnType("nvarchar(max)");

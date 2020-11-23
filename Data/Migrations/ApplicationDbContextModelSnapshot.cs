@@ -15,7 +15,7 @@ namespace Testing0._1.Data.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "3.1.8")
+                .HasAnnotation("ProductVersion", "3.1.10")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -235,6 +235,9 @@ namespace Testing0._1.Data.Migrations
 
                     b.Property<string>("Profielfoto")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Score")
+                        .HasColumnType("int");
 
                     b.Property<string>("Voornaam")
                         .HasColumnType("nvarchar(max)");

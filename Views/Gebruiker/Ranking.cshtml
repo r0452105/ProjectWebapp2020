@@ -16,6 +16,9 @@
                 @Html.DisplayNameFor(model => model.Nationaliteit)
             </th>
             <th>
+                @Html.DisplayNameFor(model => model.Score)
+            </th>
+            <th>
                 Details
             </th>
             <th></th>
@@ -24,20 +27,23 @@
     <tbody>
         @foreach (var item in Model.OrderBy(i => i.Naam))
         {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Naam)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Voornaam)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Nationaliteit)
-                </td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.GebruikerID">Bewerken -> nog te veranderen</a>
-                </td>
-            </tr>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Naam)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Voornaam)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nationaliteit)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Score)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.GebruikerID">Bewerken -> nog te veranderen</a>
+            </td>
+        </tr>
         }
     </tbody>
 </table>
