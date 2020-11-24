@@ -1,4 +1,5 @@
 ﻿@model IEnumerable<Testing0._1.Models.Gebruiker>
+
 @{
     ViewData["Title"] = "Index";
 }
@@ -21,6 +22,9 @@
                 @Html.DisplayNameFor(model => model.Nationaliteit)
             </th>
             <th>
+                @Html.DisplayNameFor(model => model.Profielfoto)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Score)
             </th>
             <th></th>
@@ -37,6 +41,9 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Nationaliteit)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Profielfoto)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Score)

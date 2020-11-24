@@ -1,4 +1,4 @@
-﻿using System;
+﻿ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -54,7 +54,7 @@ namespace Testing0._1.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("GebruikerID,Naam,Voornaam,Nationaliteit,Profielfoto")] Gebruiker gebruiker)
+        public async Task<IActionResult> Create([Bind("GebruikerID,Naam,Voornaam,Nationaliteit,Profielfoto,Score")] Gebruiker gebruiker)
         {
             if (ModelState.IsValid)
             {
@@ -86,7 +86,7 @@ namespace Testing0._1.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("GebruikerID,Naam,Voornaam,Nationaliteit,Profielfoto")] Gebruiker gebruiker)
+        public async Task<IActionResult> Edit(int id, [Bind("GebruikerID,Naam,Voornaam,Nationaliteit,Profielfoto,Score")] Gebruiker gebruiker)
         {
             if (id != gebruiker.GebruikerID)
             {
@@ -148,11 +148,6 @@ namespace Testing0._1.Controllers
         private bool GebruikerExists(int id)
         {
             return _context.Gebruikers.Any(e => e.GebruikerID == id);
-        }
-
-        public async Task<IActionResult> Ranking()
-        {
-            return View(await _context.Gebruikers.ToListAsync());
         }
     }
 }
