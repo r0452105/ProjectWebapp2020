@@ -38,6 +38,9 @@
                 <div>
                     @Html.DisplayFor(modelItem => item.KorteOmschrijving)
                 </div>
+                <div>
+                    <a asp-action="Details" asp-route-id="@item.NieuwsartikelID">Details</a>
+                </div>
             </div>
         </article>
         <br />
