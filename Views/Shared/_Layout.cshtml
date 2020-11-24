@@ -32,7 +32,17 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Gebruiker" asp-action="Ranking">Aquadraat Ranking</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Gebruiker" asp-action="Index">Meer</a>
+                            <div class="dropdown show">
+                                <a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Meer
+                                </a>
+
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                    <a class="dropdown-item" href="../Rit">Ritten</a>
+                                    <a class="dropdown-item" href="../Race">Races</a>
+                                    <a class="dropdown-item" href="../Home">Privacy</a>
+                                </div>
+                            </div>
                         </li>
                     </ul>
                 </div>

@@ -7,6 +7,9 @@
     <thead>
         <tr>
             <th>
+                Ranking
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Naam)
             </th>
             <th>
@@ -23,26 +26,33 @@
             </th>
         </tr>
     </thead>
-    <tbody> 
-        @foreach (var item in Model.OrderByDescending(i => i.Score))
+    <tbody>
+        @for (int i = 0; i < 1; i++)
         {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Naam)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Voornaam)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Nationaliteit)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Score)
-                </td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.GebruikerID">Bewerken -> nog te veranderen</a>
-                </td>
-            </tr>
+            @foreach (var item in Model.OrderByDescending(i => i.Score))
+            {
+                i += 1;
+                <tr>
+                    <td>
+                        @i
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Naam)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Voornaam)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nationaliteit)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Score)
+                    </td>
+                    <td>
+                        <a asp-action="Details" asp-route-id="@item.GebruikerID">Meer Info</a>
+                    </td>
+                </tr>
+            }
         }
     </tbody>
 </table>
