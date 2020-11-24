@@ -35,6 +35,7 @@ namespace Testing0._1.Controllers
 
             var race = await _context.Races
                 .FirstOrDefaultAsync(m => m.RaceID == id);
+
             if (race == null)
             {
                 return NotFound();
