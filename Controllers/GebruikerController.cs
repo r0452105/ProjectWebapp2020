@@ -54,7 +54,7 @@ namespace Testing0._1.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("GebruikerID,Naam,Voornaam,Nationaliteit,Profielfoto")] Gebruiker gebruiker)
+        public async Task<IActionResult> Create([Bind("GebruikerID,Naam,Voornaam,Nationaliteit,Profielfoto,Score")] Gebruiker gebruiker)
         {
             if (ModelState.IsValid)
             {
@@ -86,7 +86,7 @@ namespace Testing0._1.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("GebruikerID,Naam,Voornaam,Nationaliteit,Profielfoto")] Gebruiker gebruiker)
+        public async Task<IActionResult> Edit(int id, [Bind("GebruikerID,Naam,Voornaam,Nationaliteit,Profielfoto,Score")] Gebruiker gebruiker)
         {
             if (id != gebruiker.GebruikerID)
             {
