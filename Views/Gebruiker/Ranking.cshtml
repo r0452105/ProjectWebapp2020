@@ -14,13 +14,10 @@
                 @Html.DisplayNameFor(model => model.Naam)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.VolledigeNaam)
+                Nationaliteit
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Score)
-            </th>
-            <th>
-                Details
             </th>
         </tr>
     </thead>
@@ -35,16 +32,15 @@
                         @i
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.VolledigeNaam)
+                        <a asp-action="Details" asp-route-id="@item.GebruikerID">
+                            @Html.DisplayFor(modelItem => item.VolledigeNaam)
+                        </a>
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.Nationaliteit)
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.Score)
-                    </td>
-                    <td>
-                        <a asp-action="Details" asp-route-id="@item.GebruikerID">Meer Info</a>
                     </td>
                 </tr>
             }

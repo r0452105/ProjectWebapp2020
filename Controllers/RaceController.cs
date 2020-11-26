@@ -22,10 +22,15 @@ namespace Testing0._1.Controllers
         // GET: Race
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Races.ToListAsync());
+            return View(await _context.Races.ToListAsync()); 
         }
 
         // GET: Race/Details/5
+        public async Task<IActionResult> Details2(int? id)
+        {
+            var applicationDbContext = _context.Ritten.Include(r => r.Race).Include(r => r.Ritsoort).Where(r => r.RaceID==id);
+            return View(await applicationDbContext.ToListAsync());
+        }
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)

@@ -1,0 +1,78 @@
+﻿@model IEnumerable<Testing0._1.Models.Rit>
+
+@{
+    ViewData["Title"] = "Index";
+    int x = 0;
+    foreach (var item in Model)
+    {
+        while (x == 0)
+        {
+    <h1>@Html.DisplayFor(modelItem => item.Race.Naam) Ritten</h1>
+            x += 1;
+        }
+    }
+
+}
+
+
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Afstand)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Naam)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Datum)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Profielfoto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ritsoort)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Race)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Afstand)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Naam)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Datum)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Profielfoto)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ritsoort.Naam)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Race.Naam)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.RitID">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.RitID">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.RitID">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
