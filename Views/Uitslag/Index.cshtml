@@ -1,0 +1,65 @@
+﻿@model IEnumerable<Testing0._1.Models.Uitslag>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Puntenklassement)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Bergklassement)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Strijdlustklassement)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Algemeenklassement)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rit)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Gebruiker)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Puntenklassement)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Bergklassement)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Strijdlustklassement)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Algemeenklassement)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rit.RitID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gebruiker.Naam)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.UitslagID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.UitslagID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.UitslagID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
