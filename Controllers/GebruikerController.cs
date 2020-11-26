@@ -25,6 +25,12 @@ namespace Testing0._1.Controllers
             return View(await _context.Gebruikers.ToListAsync());
         }
 
+        public async Task<IActionResult> Details2g(int? id)
+        {
+            var applicationDbContext = _context.Uitslagen.Include(r => r.Rit).Include(r => r.Gebruiker).Where(r => r.GebruikerID== id && r.Resultaat==1);
+            return View(await applicationDbContext.ToListAsync());
+        }
+
         // GET: Gebruiker/Details/5
         public async Task<IActionResult> Details(int? id)
         {
