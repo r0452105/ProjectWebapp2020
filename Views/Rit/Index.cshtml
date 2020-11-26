@@ -16,6 +16,9 @@
                 @Html.DisplayNameFor(model => model.Afstand)
             </th>
             <th>
+                @Html.DisplayNameFor(model => model.Naam)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Datum)
             </th>
             <th>
@@ -37,16 +40,19 @@
                 @Html.DisplayFor(modelItem => item.Afstand)
             </td>
             <td>
+                @Html.DisplayFor(modelItem => item.Naam)
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.Datum)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Profielfoto)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Ritsoort.Naam)
+                @Html.DisplayFor(modelItem => item.Ritsoort.RitsoortID)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Race.Naam)
+                @Html.DisplayFor(modelItem => item.Race.RaceID)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.RitID">Edit</a> |

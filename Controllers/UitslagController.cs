@@ -49,8 +49,8 @@ namespace Testing0._1.Controllers
         // GET: Uitslag/Create
         public IActionResult Create()
         {
-            ViewData["GebruikerID"] = new SelectList(_context.Gebruikers, "GebruikerID", "Naam");
-            ViewData["RitID"] = new SelectList(_context.Ritten, "RitID", "RitID");
+            ViewData["GebruikerID"] = new SelectList(_context.Gebruikers, "GebruikerID", "VolledigeNaam");
+            ViewData["RitID"] = new SelectList(_context.Ritten, "RitID", "Naam");
             return View();
         }
 
@@ -67,8 +67,8 @@ namespace Testing0._1.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["GebruikerID"] = new SelectList(_context.Gebruikers, "GebruikerID", "Naam", uitslag.GebruikerID);
-            ViewData["RitID"] = new SelectList(_context.Ritten, "RitID", "RitID", uitslag.RitID);
+            ViewData["GebruikerID"] = new SelectList(_context.Gebruikers, "GebruikerID", "VolledigeNaam", uitslag.GebruikerID);
+            ViewData["RitID"] = new SelectList(_context.Ritten, "RitID", "Naam", uitslag.RitID);
             return View(uitslag);
         }
 
@@ -85,8 +85,8 @@ namespace Testing0._1.Controllers
             {
                 return NotFound();
             }
-            ViewData["GebruikerID"] = new SelectList(_context.Gebruikers, "GebruikerID", "Naam", uitslag.GebruikerID);
-            ViewData["RitID"] = new SelectList(_context.Ritten, "RitID", "RitID", uitslag.RitID);
+            ViewData["GebruikerID"] = new SelectList(_context.Gebruikers, "GebruikerID", "VolledigeNaam", uitslag.GebruikerID);
+            ViewData["RitID"] = new SelectList(_context.Ritten, "RitID", "Naam", uitslag.RitID);
             return View(uitslag);
         }
 
@@ -122,8 +122,8 @@ namespace Testing0._1.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["GebruikerID"] = new SelectList(_context.Gebruikers, "GebruikerID", "Naam", uitslag.GebruikerID);
-            ViewData["RitID"] = new SelectList(_context.Ritten, "RitID", "RitID", uitslag.RitID);
+            ViewData["GebruikerID"] = new SelectList(_context.Gebruikers, "GebruikerID", "VolledigeNaam", uitslag.GebruikerID);
+            ViewData["RitID"] = new SelectList(_context.Ritten, "RitID", "Naam", uitslag.RitID);
             return View(uitslag);
         }
 

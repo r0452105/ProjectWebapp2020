@@ -13,46 +13,34 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Puntenklassement)
+                Renner
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Bergklassement)
+                Race
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Strijdlustklassement)
+                Resultaat
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Algemeenklassement)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Rit)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Gebruiker)
+                Tijd
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
+@foreach (var item in Model.Where(n => n.RitID == 1 || n.RitID == 2)) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Puntenklassement)
+                @Html.DisplayFor(modelItem => item.Gebruiker.VolledigeNaam)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Bergklassement)
+                @Html.DisplayFor(modelItem => item.Rit.Naam)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Strijdlustklassement)
+                1e xxx
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Algemeenklassement)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Rit.RitID)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Gebruiker.Naam)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.UitslagID">Edit</a> |
