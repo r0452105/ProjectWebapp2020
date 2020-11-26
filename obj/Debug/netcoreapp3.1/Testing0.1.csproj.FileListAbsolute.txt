@@ -363,7 +363,6 @@ C:\Users\Gebruiker\Documents\GitHub\ProjectWebapp2020\bin\Debug\netcoreapp3.1\ru
 C:\Users\Gebruiker\Documents\GitHub\ProjectWebapp2020\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\Gebruiker\Documents\GitHub\ProjectWebapp2020\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\Gebruiker\Documents\GitHub\ProjectWebapp2020\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-C:\Users\Gebruiker\Documents\GitHub\ProjectWebapp2020\obj\Debug\netcoreapp3.1\Testing0.1.csprojAssemblyReference.cache
 C:\Users\Gebruiker\Documents\GitHub\ProjectWebapp2020\obj\Debug\netcoreapp3.1\Testing0.1.AssemblyInfoInputs.cache
 C:\Users\Gebruiker\Documents\GitHub\ProjectWebapp2020\obj\Debug\netcoreapp3.1\Testing0.1.AssemblyInfo.cs
 C:\Users\Gebruiker\Documents\GitHub\ProjectWebapp2020\obj\Debug\netcoreapp3.1\Testing0.1.RazorAssemblyInfo.cache
@@ -424,3 +423,4 @@ C:\Users\Gebruiker\Documents\GitHub\ProjectWebapp2020\obj\Debug\netcoreapp3.1\Ra
 C:\Users\Gebruiker\Documents\GitHub\ProjectWebapp2020\obj\Debug\netcoreapp3.1\Razor\Views\Uitslag\Index.cshtml.g.cs
 C:\Users\Gebruiker\Documents\GitHub\ProjectWebapp2020\obj\Debug\netcoreapp3.1\Razor\Views\Race\details2.cshtml.g.cs
 C:\Users\Gebruiker\Documents\GitHub\ProjectWebapp2020\obj\Debug\netcoreapp3.1\Razor\Views\Gebruiker\Details2g.cshtml.g.cs
+C:\Users\Gebruiker\Documents\GitHub\ProjectWebapp2020\obj\Debug\netcoreapp3.1\Testing0.1.csprojAssemblyReference.cache
