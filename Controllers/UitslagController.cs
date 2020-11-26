@@ -22,7 +22,7 @@ namespace Testing0._1.Controllers
         // GET: Uitslag
         public async Task<IActionResult> Index()
         {
-            var applicationDbContext = _context.Uitslagen.Include(u => u.Gebruiker).Include(u => u.Rit);
+            var applicationDbContext = _context.Uitslagen.Include(u => u.Gebruiker).Include(u => u.Rit).Include(u => u.Rit.Ritsoort);
             return View(await applicationDbContext.ToListAsync());
         }
 
@@ -59,7 +59,7 @@ namespace Testing0._1.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("UitslagID,Puntenklassement,Bergklassement,Strijdlustklassement,Algemeenklassement,RitID,GebruikerID")] Uitslag uitslag)
+        public async Task<IActionResult> Create([Bind("UitslagID,Puntenklassement,Bergklassement,Strijdlustklassement,Resultaat,Algemeenklassement,RitID,GebruikerID")] Uitslag uitslag)
         {
             if (ModelState.IsValid)
             {
@@ -95,7 +95,7 @@ namespace Testing0._1.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("UitslagID,Puntenklassement,Bergklassement,Strijdlustklassement,Algemeenklassement,RitID,GebruikerID")] Uitslag uitslag)
+        public async Task<IActionResult> Edit(int id, [Bind("UitslagID,Puntenklassement,Bergklassement,Strijdlustklassement,Resultaat,Algemeenklassement,RitID,GebruikerID")] Uitslag uitslag)
         {
             if (id != uitslag.UitslagID)
             {

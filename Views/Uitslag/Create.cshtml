@@ -13,6 +13,11 @@
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
+                <label asp-for="Resultaat" class="control-label"></label>
+                <input asp-for="Resultaat" class="form-control" />
+                <span asp-validation-for="Resultaat" class="text-danger"></span>
+            </div>
+            <div class="form-group">
                 <label>Tijd</label>
                 <input asp-for="Algemeenklassement" class="form-control" />
                 <span asp-validation-for="Algemeenklassement" class="text-danger"></span>
