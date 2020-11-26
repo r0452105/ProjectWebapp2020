@@ -11,10 +11,13 @@
 </p>
 @using (Html.BeginForm())
 {
+
     <p>
-        Name  : @Html.TextBox("searchname")<br />
-        <input type="submit" value="Search" />
+        Name  : @Html.TextBox("searchname")
+        <input name="kut" type="submit" value="Search"/>
     </p>
+
+
 }
 <table class="table">
     <thead>
@@ -39,13 +42,14 @@
         {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Gebruiker.VolledigeNaam)
+                    <a asp-controller ="Gebruiker" asp-action="Details" asp-route-id="@item.GebruikerID">@Html.DisplayFor(modelItem => item.Gebruiker.VolledigeNaam)</a>
+
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Resultaat)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Rit.Naam)
+                    <a asp-controller ="Rit" asp-action="Details" asp-route-id="@item.RitID">@Html.DisplayFor(modelItem => item.Rit.Naam)</a>
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Algemeenklassement)

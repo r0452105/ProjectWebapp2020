@@ -22,6 +22,7 @@ namespace Testing0._1.Controllers
         // GET: Uitslag
         public async Task<IActionResult> Index(string searchname)
         {
+
             if (!String.IsNullOrEmpty(searchname))
             {
                 var applicationDbContext = _context.Uitslagen.Include(u => u.Gebruiker).Include(u => u.Rit).Where(u => u.Gebruiker.Naam.Contains(searchname)|| u.Gebruiker.Voornaam.Contains(searchname));
