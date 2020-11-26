@@ -9,6 +9,7 @@ namespace Testing0._1.Models
     {
         public int RitID { get; set; }
         public int Afstand { get; set; }
+        public string Naam { get; set; }
         public DateTime Datum { get; set; }
         public string Profielfoto { get; set; }
         public int RitsoortID { get; set; }
