@@ -20,10 +20,18 @@ namespace Testing0._1.Controllers
         }
 
         // GET: Uitslag
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string searchname)
         {
-            var applicationDbContext = _context.Uitslagen.Include(u => u.Gebruiker).Include(u => u.Rit).Include(u => u.Rit.Ritsoort);
-            return View(await applicationDbContext.ToListAsync());
+            if (!String.IsNullOrEmpty(searchname))
+            {
+                var applicationDbContext = _context.Uitslagen.Include(u => u.Gebruiker).Include(u => u.Rit).Where(u => u.Gebruiker.Naam.Contains(searchname)|| u.Gebruiker.Voornaam.Contains(searchname));
+                return View(await applicationDbContext.ToListAsync());
+            }
+            else
+            {
+                var applicationDbContext = _context.Uitslagen.Include(u => u.Gebruiker).Include(u => u.Rit);
+                return View(await applicationDbContext.ToListAsync());
+            }
         }
 
         // GET: Uitslag/Details/5
@@ -37,6 +45,7 @@ namespace Testing0._1.Controllers
             var uitslag = await _context.Uitslagen
                 .Include(u => u.Gebruiker)
                 .Include(u => u.Rit)
+                .Include(u => u.Rit.Ritsoort)
                 .FirstOrDefaultAsync(m => m.UitslagID == id);
             if (uitslag == null)
             {
