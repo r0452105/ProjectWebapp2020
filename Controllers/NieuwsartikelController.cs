@@ -25,6 +25,11 @@ namespace Testing0._1.Controllers
             return View(await _context.Nieuwsartikels.ToListAsync());
         }
 
+        public async Task<IActionResult> Index1()
+        {
+            return View(await _context.Nieuwsartikels.ToListAsync());
+        }
+
         // GET: Nieuwsartikel/Details/5
         public async Task<IActionResult> Details(int? id)
         {

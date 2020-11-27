@@ -2,6 +2,7 @@
 
 @{
     ViewData["Title"] = "Index";
+    int x = 0;
 }
 
 <h1>Events & News</h1>
@@ -18,41 +19,45 @@
                 </form>
                 <p>
                     <a asp-action="Create">Create New</a>
+                    <a asp-action="Index1">Index 1</a>
                 </p>
             </div>
         </div>
     </div>
 </div>
-    <hr>
-        @foreach (var item in Model)
-        {<div class="row">
-    <div class="card" style="width: 20rem; margin-left:auto; margin-top:3rem; ">
-        <img src="@Html.DisplayFor(modelItem => item.Artikelfoto)" class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">@Html.DisplayFor(modelItem => item.Titel)</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-    </div>
-    <div class="card" style="width: 20rem; margin-left:auto; margin-right:auto;  margin-top:3rem;">
-        <img src="@Html.DisplayFor(modelItem => item.Artikelfoto)" class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">@Html.DisplayFor(modelItem => item.Titel)</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-    </div>
-    <div class="card" style="width: 20rem; margin-right:auto;  margin-top:3rem; ">
-        <img src="@Html.DisplayFor(modelItem => item.Artikelfoto)" class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">@Html.DisplayFor(modelItem => item.Titel)</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-    </div>
-</div>
-            
+<hr>
+<div class="card-group">
+    @foreach (var item in Model)
+    {
+        if (x < 1)
+        {
+            <div class="row">
+                <div class="card" style="width: 45rem; margin-left:15rem; margin-right:15rem;">
+                    <img src="@Html.DisplayFor(modelItem => item.Artikelfoto)" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">@Html.DisplayFor(modelItem => item.Titel)</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            x += 3;
         }
+        else
+        {
+            <div class="card-group">
+                <div class="card" style="width: 23rem; margin-left:auto; margin-right:auto;  margin-top:3rem; ">
+                    <img src="@Html.DisplayFor(modelItem => item.Artikelfoto)" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">@Html.DisplayFor(modelItem => item.Titel)</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+        }
+    }
+</div>
 
 
 
