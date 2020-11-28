@@ -27,7 +27,14 @@ namespace Testing0._1.Controllers
 
         public async Task<IActionResult> Details2g(int? id)
         {
-            var applicationDbContext = _context.Uitslagen.Include(r => r.Rit).Include(r => r.Gebruiker).Where(r => r.GebruikerID== id && r.Resultaat==1);
+                var applicationDbContext = _context.Uitslagen.Include(r => r.Rit).Include(r => r.Gebruiker).Where(r => r.GebruikerID == id && r.Resultaat ==1);
+                try { return View(await applicationDbContext.ToListAsync()); }
+                catch { return null; }
+        }
+
+        public async Task<IActionResult> Details3(int? id)
+        {
+            var applicationDbContext = _context.Uitslagen.Include(r => r.Rit).Include(r => r.Gebruiker).Where(r => r.GebruikerID == id).OrderBy(r => r.Rit.Datum);
             return View(await applicationDbContext.ToListAsync());
         }
 

@@ -7,6 +7,7 @@
     {
         while (x == 0)
         {
+            
             <h1>@Html.DisplayFor(modelItem => item.Gebruiker.VolledigeNaam)</h1>
             <img src="@Html.DisplayFor(modelItem => item.Gebruiker.Profielfoto)" alt="shit" width="200" height="200" />
             x += 1;
@@ -16,13 +17,11 @@
 }
 
 
-
-
 <table class="table">
     <thead>
         <tr>
             <th>
-                Overwinningen
+                Beste resultaat
             </th>
         </tr>
     </thead>
@@ -42,3 +41,13 @@
         }
     </tbody>
 </table>
+
+@foreach (var item in Model)
+    {
+        while (x == 1)
+        {
+<a asp-controller="Gebruiker" asp-action="Details3" asp-route-id="@item.GebruikerID">Alle uitslagen van @Html.DisplayFor(modelItem => item.Gebruiker.VolledigeNaam)</a>
+            x += 1;
+        }
+    }
+
