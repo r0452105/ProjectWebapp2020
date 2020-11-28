@@ -40,7 +40,7 @@
                 @Html.DisplayFor(modelItem => item.Afstand)  km
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Naam)
+                <a asp-action="Details" asp-route-id="@item.RitID">@Html.DisplayFor(modelItem => item.Naam)</a>
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Datum)

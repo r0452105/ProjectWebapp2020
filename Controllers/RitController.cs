@@ -34,16 +34,14 @@ namespace Testing0._1.Controllers
                 return NotFound();
             }
 
-            var rit = await _context.Ritten
-                .Include(r => r.Race)
-                .Include(r => r.Ritsoort)
-                .FirstOrDefaultAsync(m => m.RitID == id);
-            if (rit == null)
+            var applicationDbContext = _context.Uitslagen.Include(r => r.Rit).Include(r => r.Gebruiker).Where(r => r.RitID == id).OrderBy(r => r.Resultaat);
+
+            if (applicationDbContext == null)
             {
                 return NotFound();
             }
 
-            return View(rit);
+            return View(await applicationDbContext.ToListAsync());
         }
 
         // GET: Rit/Create
