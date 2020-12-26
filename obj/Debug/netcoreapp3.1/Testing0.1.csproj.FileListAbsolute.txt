@@ -466,3 +466,4 @@ C:\Users\Gebruiker\Documents\GitHub\ProjectWebapp2020\obj\Debug\netcoreapp3.1\Ra
 C:\Users\Gebruiker\Documents\GitHub\ProjectWebapp2020\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ViewImports.cshtml.g.cs
 C:\Users\Gebruiker\Documents\GitHub\ProjectWebapp2020\obj\Debug\netcoreapp3.1\Razor\Views\Role\Create.cshtml.g.cs
 C:\Users\Gebruiker\Documents\GitHub\ProjectWebapp2020\obj\Debug\netcoreapp3.1\Razor\Views\Role\Index.cshtml.g.cs
+C:\Users\Gebruiker\Documents\GitHub\ProjectWebapp2020\bin\Debug\netcoreapp3.1\wwwroot\images\webb-dark.png
