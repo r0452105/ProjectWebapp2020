@@ -7,8 +7,12 @@
     {
         while (x == 0)
         {
-            <h1>@Html.DisplayFor(modelItem => item.Gebruiker.VolledigeNaam)</h1>
-            <img src="@Html.DisplayFor(modelItem => item.Gebruiker.Profielfoto)" alt="shit" width="200" height="200" />
+            <div class="card" style="width: 40rem; margin-left:15rem; margin-right:15rem;">
+                <img src="@Html.DisplayFor(modelItem => item.Gebruiker.Profielfoto)" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">@Html.DisplayFor(modelItem => item.Gebruiker.VolledigeNaam)</h5>
+                </div>
+            </div>
             x += 1;
         }
     }
@@ -16,7 +20,8 @@
 }
 
 
-<h2>Uitslagen</h2>
+
+<h3>Recente Uitslagen</h3>
 
 <table class="table">
     <thead>
@@ -35,22 +40,22 @@
     <tbody>
         @foreach (var item in Model)
         {
-        <tr>
-            <td>
-                <a asp-controller="Rit" asp-action="Details" asp-route-id="@item.RitID">@Html.DisplayFor(modelItem => item.Resultaat)</a>
-            </td>
-            <td>
-                <a asp-controller="Rit" asp-action="Details" asp-route-id="@item.RitID">@Html.DisplayFor(modelItem => item.Rit.Naam)</a>
-            </td>
-            <td>
-                <a asp-controller="Rit" asp-action="Details" asp-route-id="@item.RitID">@Html.DisplayFor(modelItem => item.Algemeenklassement)</a>
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.RitID">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.RitID">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.RitID">Delete</a>
-            </td>
-        </tr>
+            <tr>
+                <td>
+                    <a asp-controller="Rit" asp-action="Details" asp-route-id="@item.RitID">@Html.DisplayFor(modelItem => item.Resultaat)</a>
+                </td>
+                <td>
+                    <a asp-controller="Rit" asp-action="Details" asp-route-id="@item.RitID">@Html.DisplayFor(modelItem => item.Rit.Naam)</a>
+                </td>
+                <td>
+                    <a asp-controller="Rit" asp-action="Details" asp-route-id="@item.RitID">@Html.DisplayFor(modelItem => item.Algemeenklassement)</a>
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.RitID">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.RitID">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.RitID">Delete</a>
+                </td>
+            </tr>
         }
     </tbody>
 </table>
