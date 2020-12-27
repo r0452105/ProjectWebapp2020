@@ -22,7 +22,7 @@ namespace Testing0._1.Controllers
         // GET: Gebruiker
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Gebruikers.ToListAsync());
+            return View(await _context.Gebruikers.Include(r => r.GebruikerTeams).ToListAsync());
         }
 
         public async Task<IActionResult> Details2g(int? id)

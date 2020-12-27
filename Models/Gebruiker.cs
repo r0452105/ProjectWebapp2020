@@ -19,6 +19,7 @@ namespace Testing0._1.Models
         public string Profielfoto { get; set; }
 
         public int Score { get; set; }
+        public virtual ICollection<GebruikerTeam> GebruikerTeams { get; set; }
 
     }
 }

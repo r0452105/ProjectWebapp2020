@@ -467,3 +467,8 @@ C:\Users\Gebruiker\Documents\GitHub\ProjectWebapp2020\obj\Debug\netcoreapp3.1\Ra
 C:\Users\Gebruiker\Documents\GitHub\ProjectWebapp2020\obj\Debug\netcoreapp3.1\Razor\Views\Role\Create.cshtml.g.cs
 C:\Users\Gebruiker\Documents\GitHub\ProjectWebapp2020\obj\Debug\netcoreapp3.1\Razor\Views\Role\Index.cshtml.g.cs
 C:\Users\Gebruiker\Documents\GitHub\ProjectWebapp2020\bin\Debug\netcoreapp3.1\wwwroot\images\webb-dark.png
+C:\Users\Gebruiker\Documents\GitHub\ProjectWebapp2020\obj\Debug\netcoreapp3.1\Razor\Views\GebruikerTeam\Create.cshtml.g.cs
+C:\Users\Gebruiker\Documents\GitHub\ProjectWebapp2020\obj\Debug\netcoreapp3.1\Razor\Views\GebruikerTeam\Delete.cshtml.g.cs
+C:\Users\Gebruiker\Documents\GitHub\ProjectWebapp2020\obj\Debug\netcoreapp3.1\Razor\Views\GebruikerTeam\Details.cshtml.g.cs
+C:\Users\Gebruiker\Documents\GitHub\ProjectWebapp2020\obj\Debug\netcoreapp3.1\Razor\Views\GebruikerTeam\Edit.cshtml.g.cs
+C:\Users\Gebruiker\Documents\GitHub\ProjectWebapp2020\obj\Debug\netcoreapp3.1\Razor\Views\GebruikerTeam\Index.cshtml.g.cs
