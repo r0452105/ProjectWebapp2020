@@ -465,11 +465,12 @@ C:\Users\Gebruiker\Documents\GitHub\ProjectWebapp2020\obj\Debug\netcoreapp3.1\Ra
 C:\Users\Gebruiker\Documents\GitHub\ProjectWebapp2020\obj\Debug\netcoreapp3.1\Razor\Views\GebruikerTeam\Edit.cshtml.g.cs
 C:\Users\Gebruiker\Documents\GitHub\ProjectWebapp2020\obj\Debug\netcoreapp3.1\Razor\Views\GebruikerTeam\Index.cshtml.g.cs
 C:\Users\Gebruiker\Documents\GitHub\ProjectWebapp2020\obj\Debug\netcoreapp3.1\Razor\Views\GebruikerTeam\Details2.cshtml.g.cs
-C:\Users\Gebruiker\Documents\GitHub\ProjectWebapp2020\obj\Debug\netcoreapp3.1\Testing0.1.csproj.CoreCompileInputs.cache
-C:\Users\Gebruiker\Documents\GitHub\ProjectWebapp2020\obj\Debug\netcoreapp3.1\Testing0.1.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\Gebruiker\Documents\GitHub\ProjectWebapp2020\obj\Debug\netcoreapp3.1\Testing0.1.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Gebruiker\Documents\GitHub\ProjectWebapp2020\obj\Debug\netcoreapp3.1\Testing0.1.csprojAssemblyReference.cache
 C:\Users\Gebruiker\Documents\GitHub\ProjectWebapp2020\bin\Debug\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\Gebruiker\Documents\GitHub\ProjectWebapp2020\bin\Debug\netcoreapp3.1\Microsoft.Bcl.HashCode.dll
 C:\Users\Gebruiker\Documents\GitHub\ProjectWebapp2020\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.dll
 C:\Users\Gebruiker\Documents\GitHub\ProjectWebapp2020\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Binder.dll
+C:\Users\Gebruiker\Documents\GitHub\ProjectWebapp2020\obj\Debug\netcoreapp3.1\Testing0.1.csproj.CoreCompileInputs.cache
+C:\Users\Gebruiker\Documents\GitHub\ProjectWebapp2020\obj\Debug\netcoreapp3.1\Testing0.1.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Gebruiker\Documents\GitHub\ProjectWebapp2020\obj\Debug\netcoreapp3.1\Testing0.1.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Gebruiker\Documents\GitHub\ProjectWebapp2020\obj\Debug\netcoreapp3.1\Razor\Views\Teams\IndexTest.cshtml.g.cs

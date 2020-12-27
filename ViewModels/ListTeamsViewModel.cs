@@ -8,8 +8,7 @@ namespace Testing0._1.ViewModels
 {
     public class ListTeamsViewModel
     {
-      public List<Team> Teams { get; set; }
-      public List<Gebruiker> Gebruikers { get; set; }
-      public List<Race> Races { get; set; }
+      public List<GebruikerTeam> Gebruikerteams { get; set; }
+      public List<RaceTeam> Raceteams { get; set; }
     }
 }

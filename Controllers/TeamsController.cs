@@ -23,7 +23,7 @@ namespace Testing0._1.Controllers
         // GET: Teams
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Teams.Include(m => m.RaceTeams).ToListAsync());
+            return View(await _context.Teams.ToListAsync()); 
         }
 
         // GET: Teams/Details/5
