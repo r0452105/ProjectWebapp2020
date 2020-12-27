@@ -1,0 +1,48 @@
+﻿@model IEnumerable<Testing0._1.Models.GebruikerTeam>
+
+@{
+    ViewData["Title"] = "Index";
+    int x = 0;
+    foreach (var item in Model)
+    {
+        while (x == 0)
+        {
+
+            <h1>@Html.DisplayFor(modelItem => item.Team.Naam)</h1>
+            x += 1;
+        }
+    }
+
+}
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Teamleden
+            </th>
+            <th>
+                Aquadraatscore
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                <a asp-controller="Gebruiker" asp-action="Details" asp-route-id="@item.GebruikerID">@Html.DisplayFor(modelItem => item.Gebruiker.VolledigeNaam)</a>
+            </td>
+            <td>
+                <a asp-controller="Gebruiker" asp-action="Ranking">@Html.DisplayFor(modelItem => item.Gebruiker.Score)</a>
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.GebruikerID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.GebruikerID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.GebruikerID">Delete</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

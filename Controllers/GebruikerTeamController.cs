@@ -13,6 +13,7 @@ namespace Testing0._1.Controllers
     public class GebruikerTeamController : Controller
     {
         private readonly ApplicationDbContext _context;
+        public List<Race> Races { get; set; }
 
         public GebruikerTeamController(ApplicationDbContext context)
         {
@@ -44,6 +45,12 @@ namespace Testing0._1.Controllers
             }
 
             return View(gebruikerTeam);
+        }
+
+        public async Task<IActionResult> Details2(int? id)
+        {
+            var applicationDbContext = _context.GebruikersTeams.Include(g => g.Gebruiker).Include(g => g.Team).Where(r => r.TeamID == id);
+            return View(await applicationDbContext.ToListAsync());
         }
 
         // GET: GebruikerTeam/Create
