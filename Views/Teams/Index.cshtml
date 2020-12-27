@@ -15,7 +15,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.Naam)
             </th>
-            <th></th>
+            <th>
+                Race
+            </th>
         </tr>
     </thead>
     <tbody>
@@ -23,6 +25,9 @@
         <tr>
             <td>
                 <a asp-controller="GebruikerTeam" asp-action="Details2" asp-route-id="@item.TeamID">@Html.DisplayFor(modelItem => item.Naam)</a>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RaceTeams)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.TeamID">Edit</a> |

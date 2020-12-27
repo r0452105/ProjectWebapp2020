@@ -12,6 +12,7 @@ namespace Testing0._1.Models
         public bool Finished { get; set; }
         public DateTime Startdatum { get; set; }
         public int Aantalritten { get; set; }
+        public virtual ICollection<RaceTeam> RaceTeams { get; set; }
 
     }
 }
