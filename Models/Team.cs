@@ -9,7 +9,8 @@ namespace Testing0._1.Models
     {
         public int TeamID { get; set; }
         public string Naam { get; set; }
+        public int RaceID { get; set; }
+        public Race Race { get; set; }
         public virtual ICollection<GebruikerTeam> GebruikerTeams { get; set; }
-        public virtual ICollection<RaceTeam> RaceTeams { get; set; }
     }
 }

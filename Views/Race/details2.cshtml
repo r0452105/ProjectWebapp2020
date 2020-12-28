@@ -7,7 +7,7 @@
     {
         while (x == 0)
         {
-    <h1>@Html.DisplayFor(modelItem => item.Race.Naam) Ritten</h1>
+            <h1>@Html.DisplayFor(modelItem => item.Race.Naam) Ritten</h1>
             x += 1;
         }
     }
@@ -64,3 +64,23 @@
         }
     </tbody>
 </table>
+@foreach (var item in Model)
+{
+    while (x == 1)
+    {
+        if (item.Race.Finished)
+        {
+            <h6>Deze race is afgelopen. Er zullen geen ritten meer volgen.</h6>
+        }
+        else
+        {
+            <h6>Deze race is nog niet afgelopen. Er zullen nog nieuwe ritten toegevoegd worden.</h6>
+        }
+
+        x += 1;
+    }
+}
+
+<div>
+    <a asp-action="Index">Back to Races</a>
+</div>

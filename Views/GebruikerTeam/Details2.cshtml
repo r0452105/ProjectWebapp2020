@@ -32,17 +32,21 @@
         {
         <tr>
             <td>
-                <a asp-controller="Gebruiker" asp-action="Details" asp-route-id="@item.GebruikerID">@Html.DisplayFor(modelItem => item.Gebruiker.VolledigeNaam)</a>
+                <a asp-controller="Gebruiker" asp-action="Details3" asp-route-id="@item.GebruikerID">@Html.DisplayFor(modelItem => item.Gebruiker.VolledigeNaam)</a>
             </td>
             <td>
                 <a asp-controller="Gebruiker" asp-action="Ranking">@Html.DisplayFor(modelItem => item.Gebruiker.Score)</a>
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.GebruikerID">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.GebruikerID">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.GebruikerID">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.GebruikerTeamID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.GebruikerTeamID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.GebruikerTeamID">Delete</a>
             </td>
         </tr>
         }
     </tbody>
 </table>
+
+<div>
+    <a asp-action="Index">Back to Gebruikers</a>
+</div>

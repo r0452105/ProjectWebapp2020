@@ -3,17 +3,15 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Testing0._1.Data;
 
-namespace Testing0._1.Data.Migrations
+namespace Testing0._1.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20201123072819_Migration2")]
-    partial class Migration2
+    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
     {
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -164,12 +162,10 @@ namespace Testing0._1.Data.Migrations
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
                     b.Property<string>("LoginProvider")
-                        .HasColumnType("nvarchar(128)")
-                        .HasMaxLength(128);
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("ProviderKey")
-                        .HasColumnType("nvarchar(128)")
-                        .HasMaxLength(128);
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("ProviderDisplayName")
                         .HasColumnType("nvarchar(max)");
@@ -206,12 +202,10 @@ namespace Testing0._1.Data.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("LoginProvider")
-                        .HasColumnType("nvarchar(128)")
-                        .HasMaxLength(128);
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Name")
-                        .HasColumnType("nvarchar(128)")
-                        .HasMaxLength(128);
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Value")
                         .HasColumnType("nvarchar(max)");
@@ -319,28 +313,6 @@ namespace Testing0._1.Data.Migrations
                     b.ToTable("Race");
                 });
 
-            modelBuilder.Entity("Testing0._1.Models.RaceTeam", b =>
-                {
-                    b.Property<int>("RaceTeamID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("RaceID")
-                        .HasColumnType("int");
-
-                    b.Property<int>("TeamID")
-                        .HasColumnType("int");
-
-                    b.HasKey("RaceTeamID");
-
-                    b.HasIndex("RaceID");
-
-                    b.HasIndex("TeamID");
-
-                    b.ToTable("RaceTeam");
-                });
-
             modelBuilder.Entity("Testing0._1.Models.Rit", b =>
                 {
                     b.Property<int>("RitID")
@@ -353,6 +325,9 @@ namespace Testing0._1.Data.Migrations
 
                     b.Property<DateTime>("Datum")
                         .HasColumnType("datetime2");
+
+                    b.Property<string>("Naam")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Profielfoto")
                         .HasColumnType("nvarchar(max)");
@@ -397,7 +372,12 @@ namespace Testing0._1.Data.Migrations
                     b.Property<string>("Naam")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("RaceID")
+                        .HasColumnType("int");
+
                     b.HasKey("TeamID");
+
+                    b.HasIndex("RaceID");
 
                     b.ToTable("Team");
                 });
@@ -412,19 +392,22 @@ namespace Testing0._1.Data.Migrations
                     b.Property<TimeSpan>("Algemeenklassement")
                         .HasColumnType("time");
 
-                    b.Property<int>("Bergklassement")
+                    b.Property<int?>("Bergklassement")
                         .HasColumnType("int");
 
                     b.Property<int>("GebruikerID")
                         .HasColumnType("int");
 
-                    b.Property<int>("Puntenklassement")
+                    b.Property<int?>("Puntenklassement")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("Resultaat")
                         .HasColumnType("int");
 
                     b.Property<int>("RitID")
                         .HasColumnType("int");
 
-                    b.Property<int>("Strijdlustklassement")
+                    b.Property<int?>("Strijdlustklassement")
                         .HasColumnType("int");
 
                     b.HasKey("UitslagID");
@@ -490,28 +473,13 @@ namespace Testing0._1.Data.Migrations
             modelBuilder.Entity("Testing0._1.Models.GebruikerTeam", b =>
                 {
                     b.HasOne("Testing0._1.Models.Gebruiker", "Gebruiker")
-                        .WithMany()
+                        .WithMany("GebruikerTeams")
                         .HasForeignKey("GebruikerID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("Testing0._1.Models.Team", "Team")
-                        .WithMany()
-                        .HasForeignKey("TeamID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("Testing0._1.Models.RaceTeam", b =>
-                {
-                    b.HasOne("Testing0._1.Models.Race", "Race")
-                        .WithMany()
-                        .HasForeignKey("RaceID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Testing0._1.Models.Team", "Team")
-                        .WithMany()
+                        .WithMany("GebruikerTeams")
                         .HasForeignKey("TeamID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -520,7 +488,7 @@ namespace Testing0._1.Data.Migrations
             modelBuilder.Entity("Testing0._1.Models.Rit", b =>
                 {
                     b.HasOne("Testing0._1.Models.Race", "Race")
-                        .WithMany()
+                        .WithMany("Ritten")
                         .HasForeignKey("RaceID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -528,6 +496,15 @@ namespace Testing0._1.Data.Migrations
                     b.HasOne("Testing0._1.Models.Ritsoort", "Ritsoort")
                         .WithMany()
                         .HasForeignKey("RitsoortID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Testing0._1.Models.Team", b =>
+                {
+                    b.HasOne("Testing0._1.Models.Race", "Race")
+                        .WithMany("Teams")
+                        .HasForeignKey("RaceID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

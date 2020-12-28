@@ -7,11 +7,11 @@ using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Testing0._1.Data;
 
-namespace Testing0._1.Data.Migrations
+namespace Testing0._1.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20201227090729_GebruikerTeam1")]
-    partial class GebruikerTeam1
+    [Migration("20201227230240_InitialCreate")]
+    partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -315,28 +315,6 @@ namespace Testing0._1.Data.Migrations
                     b.ToTable("Race");
                 });
 
-            modelBuilder.Entity("Testing0._1.Models.RaceTeam", b =>
-                {
-                    b.Property<int>("RaceTeamID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("RaceID")
-                        .HasColumnType("int");
-
-                    b.Property<int>("TeamID")
-                        .HasColumnType("int");
-
-                    b.HasKey("RaceTeamID");
-
-                    b.HasIndex("RaceID");
-
-                    b.HasIndex("TeamID");
-
-                    b.ToTable("RaceTeam");
-                });
-
             modelBuilder.Entity("Testing0._1.Models.Rit", b =>
                 {
                     b.Property<int>("RitID")
@@ -396,7 +374,12 @@ namespace Testing0._1.Data.Migrations
                     b.Property<string>("Naam")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("RaceID")
+                        .HasColumnType("int");
+
                     b.HasKey("TeamID");
+
+                    b.HasIndex("RaceID");
 
                     b.ToTable("Team");
                 });
@@ -504,25 +487,10 @@ namespace Testing0._1.Data.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Testing0._1.Models.RaceTeam", b =>
-                {
-                    b.HasOne("Testing0._1.Models.Race", "Race")
-                        .WithMany()
-                        .HasForeignKey("RaceID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Testing0._1.Models.Team", "Team")
-                        .WithMany()
-                        .HasForeignKey("TeamID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
             modelBuilder.Entity("Testing0._1.Models.Rit", b =>
                 {
                     b.HasOne("Testing0._1.Models.Race", "Race")
-                        .WithMany()
+                        .WithMany("Ritten")
                         .HasForeignKey("RaceID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -530,6 +498,15 @@ namespace Testing0._1.Data.Migrations
                     b.HasOne("Testing0._1.Models.Ritsoort", "Ritsoort")
                         .WithMany()
                         .HasForeignKey("RitsoortID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Testing0._1.Models.Team", b =>
+                {
+                    b.HasOne("Testing0._1.Models.Race", "Race")
+                        .WithMany("Teams")
+                        .HasForeignKey("RaceID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

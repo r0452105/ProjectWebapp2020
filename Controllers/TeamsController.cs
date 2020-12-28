@@ -6,7 +6,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Testing0._1.Data;
-using Testing0._1.ViewModels;
 using Testing0._1.Models;
 
 namespace Testing0._1.Controllers
@@ -23,7 +22,7 @@ namespace Testing0._1.Controllers
         // GET: Teams
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Teams.ToListAsync()); 
+            return View(await _context.Teams.Include(m => m.Race).ToListAsync()); 
         }
 
         // GET: Teams/Details/5

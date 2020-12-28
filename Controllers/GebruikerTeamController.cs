@@ -92,8 +92,8 @@ namespace Testing0._1.Controllers
             {
                 return NotFound();
             }
-            ViewData["GebruikerID"] = new SelectList(_context.Gebruikers, "GebruikerID", "Naam", gebruikerTeam.GebruikerID);
-            ViewData["TeamID"] = new SelectList(_context.Teams, "TeamID", "TeamID", gebruikerTeam.TeamID);
+            ViewData["GebruikerID"] = new SelectList(_context.Gebruikers, "GebruikerID", "VolledigeNaam", gebruikerTeam.GebruikerID);
+            ViewData["TeamID"] = new SelectList(_context.Teams, "TeamID", "Naam", gebruikerTeam.TeamID);
             return View(gebruikerTeam);
         }
 

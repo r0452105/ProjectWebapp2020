@@ -23,7 +23,6 @@ namespace Testing0._1.Data
         public DbSet<Rit> Ritten { get; set; }
         public DbSet<Uitslag> Uitslagen { get; set; }
         public DbSet<GebruikerTeam> GebruikersTeams { get; set; }
-        public DbSet<RaceTeam> RacesTeams { get; set; }
         public DbSet<Nieuwsartikel> Nieuwsartikels { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -45,8 +44,6 @@ namespace Testing0._1.Data
             modelBuilder.Entity<Uitslag>().ToTable("Uitslag");
 
             modelBuilder.Entity<GebruikerTeam>().ToTable("GebruikerTeam");
-
-            modelBuilder.Entity<RaceTeam>().ToTable("RaceTeam");
 
             modelBuilder.Entity<Nieuwsartikel>().ToTable("Nieuwsartikel");
 
