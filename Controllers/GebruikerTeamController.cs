@@ -47,7 +47,7 @@ namespace Testing0._1.Controllers
             return View(gebruikerTeam);
         }
 
-        public async Task<IActionResult> Details2(int? id)
+        public async Task<IActionResult> TeamledenDetails(int? id)
         {
             var applicationDbContext = _context.GebruikersTeams.Include(g => g.Gebruiker).Include(g => g.Team).Where(r => r.TeamID == id);
             return View(await applicationDbContext.ToListAsync());

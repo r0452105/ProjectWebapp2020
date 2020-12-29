@@ -32,7 +32,7 @@
                         @i
                     </td>
                     <td>
-                        <a asp-action="Details3" asp-route-id="@item.GebruikerID">
+                        <a asp-action="Details" asp-route-id="@item.GebruikerID">
                             @Html.DisplayFor(modelItem => item.VolledigeNaam)
                         </a>
                     </td>
@@ -47,3 +47,7 @@
         }
     </tbody>
 </table>
+
+<p>
+    <a asp-action="Indexadmin">Overview Renners (Admin)</a>
+</p>

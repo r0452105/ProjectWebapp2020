@@ -24,8 +24,12 @@ namespace Testing0._1.Controllers
         {
             return View(await _context.Gebruikers.Include(r => r.GebruikerTeams).ToListAsync());
         }
+        public async Task<IActionResult> Indexadmin()
+        {
+            return View(await _context.Gebruikers.Include(r => r.GebruikerTeams).ToListAsync());
+        }
 
-        public async Task<IActionResult> Details3(int? id)
+        public async Task<IActionResult> Details(int? id)
         {
             var applicationDbContext = _context.Uitslagen.Include(r => r.Rit).Include(r => r.Gebruiker).Where(r => r.GebruikerID == id).OrderBy(r => r.Rit.Datum);
             return View(await applicationDbContext.ToListAsync());

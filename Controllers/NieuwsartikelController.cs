@@ -25,7 +25,7 @@ namespace Testing0._1.Controllers
             return View(await _context.Nieuwsartikels.ToListAsync());
         }
 
-        public async Task<IActionResult> Index1()
+        public async Task<IActionResult> Indexadmin()
         {
             return View(await _context.Nieuwsartikels.ToListAsync());
         }
