@@ -43,7 +43,10 @@
     <hr>
     <div class="row">
         <p>
-            <a asp-action="Indexadmin">Overview News (Admin)</a>
+            @if (this.User.IsInRole("Admin"))
+            {
+                <a asp-action="Indexadmin">Overview News (Admin)</a>
+            }
         </p>
     </div>
 </div>
