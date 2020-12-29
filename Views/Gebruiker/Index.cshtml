@@ -18,7 +18,7 @@
                 @Html.DisplayNameFor(model => model.Nationaliteit)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Score)
+                A<sup>2</sup> Ranking
             </th>
             <th></th>
         </tr>
@@ -33,13 +33,12 @@
                 @Html.DisplayFor(modelItem => item.Nationaliteit)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Score)
+                <a asp-action="Ranking">@Html.DisplayFor(modelItem => item.Score)</a>
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.GebruikerID">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.GebruikerID">Details</a> |
+                <a asp-action="Details3" asp-route-id="@item.GebruikerID">Details</a> |
                 <a asp-action="Delete" asp-route-id="@item.GebruikerID">Delete</a>
-                <a asp-action="Details3" asp-route-id="@item.GebruikerID">Details3</a>
             </td>
         </tr>
 }

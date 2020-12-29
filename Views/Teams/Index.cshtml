@@ -27,7 +27,7 @@
                 <a asp-controller="GebruikerTeam" asp-action="Details2" asp-route-id="@item.TeamID">@Html.DisplayFor(modelItem => item.Naam)</a>
             </td>
             <td>
-                <a asp-controller="Race" asp-action="Details2" asp-route-id="@item.RaceID">@Html.DisplayFor(modelItem => item.Race.Naam)</a>
+                <a asp-controller="Race" asp-action="Klassement" asp-route-id="@item.RaceID">@Html.DisplayFor(modelItem => item.Race.Naam)</a>
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.TeamID">Edit</a> |

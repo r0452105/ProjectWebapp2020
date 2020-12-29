@@ -1,0 +1,125 @@
+﻿@model IEnumerable<Testing0._1.Models.Uitslag>
+
+@{
+    ViewData["Title"] = "Index";
+    int x = 0;
+    int raceid = 0;
+    List<int> gebruiksidlist = new List<int>();
+    List<int> ritidlist = new List<int>();
+    int? bergpunten = 0;
+    int? puntenpunten = 0;
+    int? strijdpunten = 0;
+    string naam = "";
+    TimeSpan time = new TimeSpan();
+    foreach (var item in Model)
+    {
+        while (x == 0)
+        {
+            <h2>@Html.DisplayFor(modelItem => item.Rit.Race.Naam)</h2>
+            x += 1;
+            raceid = item.Rit.RaceID;
+        }
+    }
+
+}
+
+
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+
+<h3>Tussenstand</h3>
+
+<table class="table" id="myTable">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Gebruiker)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Puntenklassement)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Bergklassement)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Strijdlustklassement)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Algemeenklassement)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            if (!gebruiksidlist.Contains(item.GebruikerID))
+            {
+                gebruiksidlist.Add(item.GebruikerID);
+            }
+        }
+        @foreach (int gebrID in gebruiksidlist)
+        {
+            bergpunten = 0;
+            puntenpunten = 0;
+            strijdpunten = 0;
+            naam = "";
+            time = new TimeSpan();
+            @foreach (var item in Model)
+            {
+                if (item.GebruikerID == gebrID)
+                {
+                    bergpunten += item.Bergklassement;
+                    puntenpunten += item.Puntenklassement;
+                    strijdpunten += item.Strijdlustklassement;
+                    naam = item.Gebruiker.VolledigeNaam;
+                    time += item.Algemeenklassement;
+                }
+            }
+            <tr>
+                <td>
+                    @Html.Raw(naam)
+                </td>
+                <td>
+                    @Html.Raw(puntenpunten)
+                </td>
+                <td>
+                    @Html.Raw(bergpunten)
+                </td>
+                <td>
+                    @Html.Raw(strijdpunten)
+                </td>
+                <td>
+                    @Html.Raw(time)
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div>
+    <a asp-action="Details" asp-route-id="@raceid">Ritten</a> |
+    <a asp-action="Index">Back to Races</a>
+</div>
+
+@foreach (var item in Model)
+{
+    while (x == 1)
+    {
+        if (item.Rit.Race.Finished)
+        {
+            <p>Deze race is afgelopen.</p>
+        }
+        else
+        {
+
+            <p>*Deze race is nog niet afgelopen. Er zullen nog nieuwe ritten toegevoegd worden.</p>
+
+        }
+
+        x += 1;
+    }
+}

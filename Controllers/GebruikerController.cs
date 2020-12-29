@@ -32,22 +32,7 @@ namespace Testing0._1.Controllers
         }
 
         // GET: Gebruiker/Details/5
-        public async Task<IActionResult> Details(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
 
-            var gebruiker = await _context.Gebruikers
-                .FirstOrDefaultAsync(m => m.GebruikerID == id);
-            if (gebruiker == null)
-            {
-                return NotFound();
-            }
-
-            return View(gebruiker);
-        }
 
         // GET: Gebruiker/Create
         public IActionResult Create()

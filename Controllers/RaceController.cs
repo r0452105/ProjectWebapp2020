@@ -25,28 +25,15 @@ namespace Testing0._1.Controllers
             return View(await _context.Races.ToListAsync()); 
         }
 
-        // GET: Race/Details/5
-        public async Task<IActionResult> Details2(int? id)
+        public async Task<IActionResult> Klassement(int? id)
         {
-            var applicationDbContext = _context.Ritten.Include(r => r.Race).Include(r => r.Ritsoort).Where(r => r.RaceID==id);
+            var applicationDbContext = _context.Uitslagen.Include(r => r.Gebruiker).Include(r => r.Rit).ThenInclude(r => r.Race).Where(r => r.Rit.RaceID == id);
             return View(await applicationDbContext.ToListAsync());
         }
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var race = await _context.Races
-                .FirstOrDefaultAsync(m => m.RaceID == id);
-
-            if (race == null)
-            {
-                return NotFound();
-            }
-
-            return View(race);
+            var applicationDbContext = _context.Uitslagen.Include(r => r.Gebruiker).Include(r => r.Rit).ThenInclude(r => r.Race).Where(r => r.Rit.RaceID == id);
+            return View(await applicationDbContext.ToListAsync());
         }
 
         // GET: Race/Create

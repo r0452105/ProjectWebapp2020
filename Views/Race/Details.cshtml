@@ -1,52 +1,112 @@
-﻿@model Testing0._1.Models.Race
+﻿@model IEnumerable<Testing0._1.Models.Uitslag>
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Index";
+    int x = 0;
+    int raceid = 0;
+    List<int> ritidlist = new List<int>();
+    foreach (var item in Model)
+    {
+        while (x == 0)
+        {
+            <h2>@Html.DisplayFor(modelItem => item.Rit.Race.Naam)</h2>
+            x += 1;
+            raceid = item.Rit.RaceID;
+        }
+    }
+
 }
 
-<h1>Details</h1>
+
+
+
+<h3>Gereden Ritten</h3>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Rit.Afstand)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rit.Naam)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rit.Datum)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rit.Ritsoort)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            if (!ritidlist.Contains(item.RitID))
+            {
+                ritidlist.Add(item.RitID);
+            }
+        }
+        @foreach (int rittID in ritidlist)
+        {
+            int y = 0;
+            foreach (var item in Model)
+            {
+                if (y == 0)
+                {
+                    if (item.RitID == rittID)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Rit.Afstand)
+                            </td>
+                            <td>
+                                <a asp-controller="Rit" asp-action="Details" asp-route-id="@item.RitID">@Html.DisplayFor(modelItem => item.Rit.Naam)</a>
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Rit.Datum)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Rit.Ritsoort.Naam)
+                            </td>
+                            <td>
+                                <a asp-controller="Rit" asp-action="Edit" asp-route-id="@item.RitID">Edit</a> |
+                                <a asp-controller="Rit" asp-action="Details" asp-route-id="@item.RitID">Details</a> |
+                                <a asp-controller="Rit" asp-action="Delete" asp-route-id="@item.RitID">Delete</a>
+                            </td>
+                        </tr>
+
+                        y += 1;
+
+                    }
+                }
+            }
+        }
+    </tbody>
+</table>
+
 
 <div>
-    <h4>Race</h4>
-    <hr />
-    <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Naam)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Naam)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Finished)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Finished)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Startdatum)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Startdatum)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Aantalritten)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Aantalritten)
-        </dd>
-        <dt class="col-sm-2">
-            Ritten
-        </dt>
-        <dd class="col-sm-10">
-        </dd>
-        <dt class="col-sm-2">  
-        </dt>
-        <dd class="col-sm-10">
-        </dd>
-    </dl>
-    
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.RaceID">Edit</a> |
+    <a asp-action="Klassement" asp-route-id="@raceid">Klassement bekijken</a> |
     <a asp-action="Index">Back to Races</a>
 </div>
+
+
+
+@foreach (var item in Model)
+{
+    while (x == 1)
+    {
+        if (item.Rit.Race.Finished)
+        {
+            <p>Deze race is afgelopen.</p>
+        }
+        else
+        {
+            <p>*Deze race is nog niet afgelopen. Er zullen nog nieuwe ritten toegevoegd worden.</p>
+        }
+
+        x += 1;
+    }
+}

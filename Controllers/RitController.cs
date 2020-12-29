@@ -47,8 +47,8 @@ namespace Testing0._1.Controllers
         // GET: Rit/Create
         public IActionResult Create()
         {
-            ViewData["RaceID"] = new SelectList(_context.Races, "RaceID", "RaceID");
-            ViewData["RitsoortID"] = new SelectList(_context.Ritsoorten, "RitsoortID", "RitsoortID");
+            ViewData["RaceID"] = new SelectList(_context.Races, "RaceID", "Naam");
+            ViewData["RitsoortID"] = new SelectList(_context.Ritsoorten, "RitsoortID", "Naam");
             return View();
         }
 
