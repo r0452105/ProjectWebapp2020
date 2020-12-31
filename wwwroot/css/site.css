@@ -72,5 +72,19 @@ body {
 
 sup {
     vertical-align: super;
-    font-size: medium;
-} 
+    font-size: xx-small;
+}
+
+#HomepageBody {
+    background-image: url("/Images/winner2.jpg");
+    background-position-y:20%;
+    height: 100%;
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.homepagetitle{
+    margin-left: 35rem;
+}

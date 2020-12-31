@@ -71,7 +71,7 @@ namespace Testing0._1
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Nieuwsartikel}/{action=Index}/{id?}");
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
                 endpoints.MapRazorPages();
             });
 

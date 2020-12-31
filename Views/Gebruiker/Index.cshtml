@@ -4,10 +4,12 @@
 }
 
 <h1>Index</h1>
-
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
+@if (this.User.IsInRole("Admin"))
+{
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>
+}
 <table class="table">
     <thead>
         <tr>
@@ -37,15 +39,28 @@
                     <a asp-action="Ranking">@Html.DisplayFor(modelItem => item.Score)</a>
                 </td>
                 <td>
-                    <a asp-action="Edit" asp-route-id="@item.GebruikerID">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.GebruikerID">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.GebruikerID">Delete</a>
+                    @if (this.User.IsInRole("Admin"))
+                    {
+                        <a asp-action="Edit" asp-route-id="@item.GebruikerID">Edit</a>
+                    }
+                    @if (this.User.IsInRole("Admin"))
+                    {
+                        <a asp-action="Details" asp-route-id="@item.GebruikerID">Details</a> 
+                    }
+                    @if (this.User.IsInRole("Admin"))
+                    {
+                        <a asp-action="Delete" asp-route-id="@item.GebruikerID">Delete</a>
+                    }
+
                 </td>
             </tr>
         }
     </tbody>
 </table>
 
+@if (this.User.IsInRole("Admin"))
+{
 <p>
     <a asp-action="Indexadmin">Overview Renners (Admin)</a>
 </p>
+}

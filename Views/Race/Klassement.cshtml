@@ -23,11 +23,12 @@
 
 }
 
-
-
+@if (this.User.IsInRole("Admin"))
+{
 <p>
     <a asp-action="Create">Create New</a>
 </p>
+}
 
 
 <h3>Tussenstand</h3>
@@ -101,9 +102,12 @@
 </table>
 
 <div>
-    <a asp-action="Details" asp-route-id="@raceid">Ritten</a> |
-    <a asp-action="Index">Back to Races</a> |
-    <a asp-controller="Race" asp-action="Index">Race overview (admin)</a>
+    <a asp-action="Details" asp-route-id="@raceid">Alle Ritten</a> |
+    <a asp-action="Index">Naar Races</a> |
+    @if (this.User.IsInRole("Admin"))
+    {
+        <a asp-controller="Race" asp-action="Index">Race overview (admin)</a>
+    }
 </div>
 
 @foreach (var item in Model)

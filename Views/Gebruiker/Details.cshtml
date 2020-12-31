@@ -13,7 +13,7 @@
                         <div class="well well-sm">
                             <div class="row">
                                 <div class="col-sm-6 col-md-4">
-                                    <img src="@Html.DisplayFor(modelItem => item.Gebruiker.Profielfoto)" alt="" width="220" height="220" class="img-rounded img-responsive" />
+                                    <img src="@Html.DisplayFor(modelItem => item.Gebruiker.Profielfoto)" alt="" width="290" height="400" class="img-rounded img-responsive" />
                                 </div>
                             </div>
                         </div>
@@ -103,9 +103,18 @@
                     <a asp-controller="Rit" asp-action="Details" asp-route-id="@item.RitID">@Html.DisplayFor(modelItem => item.Algemeenklassement)</a>
                 </td>
                 <td>
-                    <a asp-action="Edit" asp-route-id="@item.RitID">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.RitID">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.RitID">Delete</a>
+                    @if (this.User.IsInRole("Admin"))
+                    {
+                        <a asp-action="Edit" asp-route-id="@item.RitID">Edit</a>
+}
+                    @if (this.User.IsInRole("Admin"))
+                    {
+                        <a asp-action="Details" asp-route-id="@item.RitID">Details</a>
+}
+                    @if (this.User.IsInRole("Admin"))
+                    {
+                        <a asp-action="Delete" asp-route-id="@item.RitID">Delete</a>
+                    }
                 </td>
             </tr>
         }
@@ -114,6 +123,9 @@
 
 <div>
     <a asp-action="Index">To Renners</a>
+    @if (this.User.IsInRole("Admin"))
+    {
     <a asp-action="Indexadmin">Overview Renners (Admin)</a>
+    }
 </div>
 

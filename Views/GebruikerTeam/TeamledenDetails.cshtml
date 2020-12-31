@@ -38,9 +38,19 @@
                 <a asp-controller="Gebruiker" asp-action="Ranking">@Html.DisplayFor(modelItem => item.Gebruiker.Score)</a>
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.GebruikerTeamID">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.GebruikerTeamID">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.GebruikerTeamID">Delete</a>
+                @if (this.User.IsInRole("Admin"))
+                {
+                    <a asp-action="Edit" asp-route-id="@item.GebruikerTeamID">Edit</a> 
+}
+                @if (this.User.IsInRole("Admin"))
+                {
+                    <a asp-action="Details" asp-route-id="@item.GebruikerTeamID">Details</a> 
+}
+                @if (this.User.IsInRole("Admin"))
+                {
+                    <a asp-action="Delete" asp-route-id="@item.GebruikerTeamID">Delete</a>
+                }
+
             </td>
         </tr>
         }
@@ -49,6 +59,9 @@
 
 <div>
     <a asp-controller="Gebruiker" asp-action="Index">Naar Renners</a> |
-    <a asp-controller="Teams" asp-action="Index">Naar Teams</a> |
+    <a asp-controller="Teams" asp-action="Index">Naar Teams</a>
+    @if (this.User.IsInRole("Admin"))
+    {
     <a asp-action="Index">Overview Gebruiker-Team combo (Admin)</a>
+    }
 </div>

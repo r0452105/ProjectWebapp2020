@@ -5,10 +5,12 @@
 }
 
 <h1>Index</h1>
-
+@if (this.User.IsInRole("Admin"))
+{
 <p>
     <a asp-action="Create">Create New</a>
 </p>
+}
 <table class="table">
     <thead>
         <tr>
@@ -44,16 +46,28 @@
                     <a asp-controller="Race" asp-action="Klassement" asp-route-id="@item.RaceID">@Html.DisplayFor(modelItem => item.Aantalritten)</a>
                 </td>
                 <td>
-                    <a asp-controller="Race" asp-action="Edit" asp-route-id="@item.RaceID">Edit</a> |
-                    <a asp-controller="Race" asp-action="Details" asp-route-id="@item.RaceID">Details</a> |
-                    <a asp-controller="Race" asp-action="Delete" asp-route-id="@item.RaceID">Delete</a>
+                    @if (this.User.IsInRole("Admin"))
+                    {
+                        <a asp-controller="Race" asp-action="Edit" asp-route-id="@item.RaceID">Edit</a>
+                    }
+                    @if (this.User.IsInRole("Admin"))
+                    {
+                        <a asp-controller="Race" asp-action="Details" asp-route-id="@item.RaceID">Details</a>
+                    }
+                    @if (this.User.IsInRole("Admin"))
+                    {
+                        <a asp-controller="Race" asp-action="Delete" asp-route-id="@item.RaceID">Delete</a>
+                    }
                 </td>
             </tr>
         }
     </tbody>
 </table>
 
-<p>
-    <a asp-controller="Race" asp-action="Index">Race overview (admin)</a>
-</p>
+@if (this.User.IsInRole("Admin"))
+{
+    <p>
+        <a asp-controller="Race" asp-action="Index">Race overview (admin)</a>
+    </p>
+}
 

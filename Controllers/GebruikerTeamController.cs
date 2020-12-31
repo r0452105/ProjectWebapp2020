@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Testing0._1.Data;
 using Testing0._1.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Testing0._1.Controllers
 {
+    [Authorize]
     public class GebruikerTeamController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -21,6 +23,7 @@ namespace Testing0._1.Controllers
         }
 
         // GET: GebruikerTeam
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Index()
         {
             var applicationDbContext = _context.GebruikersTeams.Include(g => g.Gebruiker).Include(g => g.Team);
@@ -28,6 +31,7 @@ namespace Testing0._1.Controllers
         }
 
         // GET: GebruikerTeam/Details/5
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -54,6 +58,7 @@ namespace Testing0._1.Controllers
         }
 
         // GET: GebruikerTeam/Create
+        [Authorize(Roles = "Admin")]
         public IActionResult Create()
         {
             ViewData["GebruikerID"] = new SelectList(_context.Gebruikers, "GebruikerID", "Naam");
@@ -65,6 +70,7 @@ namespace Testing0._1.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("GebruikerTeamID,TeamID,GebruikerID")] GebruikerTeam gebruikerTeam)
         {
@@ -80,6 +86,7 @@ namespace Testing0._1.Controllers
         }
 
         // GET: GebruikerTeam/Edit/5
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -101,6 +108,7 @@ namespace Testing0._1.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("GebruikerTeamID,TeamID,GebruikerID")] GebruikerTeam gebruikerTeam)
         {
@@ -135,6 +143,7 @@ namespace Testing0._1.Controllers
         }
 
         // GET: GebruikerTeam/Delete/5
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace TestAppAuthAndAuthorize.Controllers
 {
+    [Authorize]
     public class RoleController : Controller
     {
         RoleManager<IdentityRole> roleManager;
@@ -16,6 +17,7 @@ namespace TestAppAuthAndAuthorize.Controllers
         }
 
         [Authorize(Policy = "readpolicy")]
+        [Authorize(Roles = "Admin")]
         public IActionResult Index()
         {
             var roles = roleManager.Roles.ToList();
@@ -23,12 +25,14 @@ namespace TestAppAuthAndAuthorize.Controllers
         }
 
         [Authorize(Policy = "writepolicy")]
+        [Authorize(Roles = "Admin")]
         public IActionResult Create()
         {
             return View(new IdentityRole());
         }
 
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Create(IdentityRole role)
         {
             await roleManager.CreateAsync(role);

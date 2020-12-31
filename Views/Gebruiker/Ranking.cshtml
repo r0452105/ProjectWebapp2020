@@ -47,7 +47,9 @@
         }
     </tbody>
 </table>
-
+@if (this.User.IsInRole("Admin"))
+{
 <p>
     <a asp-action="Indexadmin">Overview Renners (Admin)</a>
 </p>
+}

@@ -3,19 +3,28 @@
 @{
     ViewData["Title"] = "Index";
     int x = 0;
+    int raceid = 0;
     foreach (var item in Model)
     {
         while (x == 0)
         {
             <h1>@Html.DisplayFor(modelItem => item.Rit.Naam)</h1>
+            raceid = item.Rit.RaceID;
             x += 1;
+
+            @if (this.User.IsInRole("Admin"))
+            {
+                <p>
+                    <img src="@Html.DisplayFor(modelItem => item.Rit.Profielfoto)" />
+                    <a asp-controller="Uitslag" asp-action="Create">Niewe uitslag toevoegen</a>
+                </p>
+            }
+
         }
     }
 }
 
-<p>
-    <a asp-controller="Uitslag" asp-action="Create">Niewe uitslag toevoegen</a>
-</p>
+
 
 
 <table class="table">
@@ -46,16 +55,24 @@
                     @Html.DisplayFor(modelItem => item.Algemeenklassement)
                 </td>
                 <td>
-                    <a asp-action="Edit" asp-route-id="@item.RitID">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.RitID">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.RitID">Delete</a>
+                    @if (this.User.IsInRole("Admin"))
+                    {
+                        <a asp-action="Edit" asp-route-id="@item.RitID">Edit</a>
+                    }
+                    @if (this.User.IsInRole("Admin"))
+                    {
+                        <a asp-action="Details" asp-route-id="@item.RitID">Details</a>
+                    }
+                    @if (this.User.IsInRole("Admin"))
+                    {
+                        <a asp-action="Delete" asp-route-id="@item.RitID">Delete</a>
+                    }
                 </td>
             </tr>
-
         }
     </tbody>
 </table>
 
 <div>
-    <a asp-action="Index">Back to Ritten</a>
+    <a asp-controller="Race" asp-action="Details" asp-route-id="@raceid">Naar alle ritten</a>
 </div>

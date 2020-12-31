@@ -9,9 +9,9 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark border-bottom border-dark box-shadow mb-3" style="background-color: #161513;">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Aquadraat</a>
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><img src="~/images/logoadjust.jpg" width="180"></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -20,20 +20,20 @@
                     <partial name="_LoginPartial" />
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Nieuwsartikel" asp-action="Index">News</a>
+                            <a class="nav-link text-light display-5" asp-area="" asp-controller="Nieuwsartikel" asp-action="Index">News</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Teams" asp-action="Index">Teams</a>
+                            <a class="nav-link text-light display-5" asp-area="" asp-controller="Teams" asp-action="Index">Teams</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Race" asp-action="Index">Kalender</a>
+                            <a class="nav-link text-light display-5" asp-area="" asp-controller="Race" asp-action="Index">Kalender</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Gebruiker" asp-action="Ranking">A<sup>2</sup> Ranking</a>
+                            <a class="nav-link text-light display-5" asp-area="" asp-controller="Gebruiker" asp-action="Ranking">A<sup>2</sup> Ranking</a>
                         </li>
                         <li class="nav-item">
                             <div class="dropdown show">
-                                <a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <a class="btn dropdown-toggle text-light display-5" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     Meer
                                 </a>
 
@@ -60,7 +60,7 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
+    <footer class="border-top footer text-muted border-top border-dark" style="background-color: #161513;">
         <div class="container">
             &copy; 2020 - Aquadraat - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>

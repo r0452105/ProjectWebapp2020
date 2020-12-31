@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Testing0._1.Data;
 using Testing0._1.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Testing0._1.Controllers
 {
+    [Authorize]
     public class GebruikerController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -24,6 +26,8 @@ namespace Testing0._1.Controllers
         {
             return View(await _context.Gebruikers.Include(r => r.GebruikerTeams).ToListAsync());
         }
+
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Indexadmin()
         {
             return View(await _context.Gebruikers.Include(r => r.GebruikerTeams).ToListAsync());
@@ -39,6 +43,7 @@ namespace Testing0._1.Controllers
 
 
         // GET: Gebruiker/Create
+        [Authorize(Roles = "Admin")]
         public IActionResult Create()
         {
             return View();
@@ -48,6 +53,7 @@ namespace Testing0._1.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("GebruikerID,Naam,Voornaam,Nationaliteit,Profielfoto,Score")] Gebruiker gebruiker)
         {
@@ -61,6 +67,7 @@ namespace Testing0._1.Controllers
         }
 
         // GET: Gebruiker/Edit/5
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -80,6 +87,7 @@ namespace Testing0._1.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("GebruikerID,Naam,Voornaam,Nationaliteit,Profielfoto,Score")] Gebruiker gebruiker)
         {
@@ -112,6 +120,7 @@ namespace Testing0._1.Controllers
         }
 
         // GET: Gebruiker/Delete/5
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -132,6 +141,7 @@ namespace Testing0._1.Controllers
         // POST: Gebruiker/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var gebruiker = await _context.Gebruikers.FindAsync(id);

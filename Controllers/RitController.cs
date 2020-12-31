@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Testing0._1.Data;
 using Testing0._1.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Testing0._1.Controllers
 {
+    [Authorize]
     public class RitController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -20,6 +22,7 @@ namespace Testing0._1.Controllers
         }
 
         // GET: Rit
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Index()
         {
             var applicationDbContext = _context.Ritten.Include(r => r.Race).Include(r => r.Ritsoort);
@@ -45,6 +48,7 @@ namespace Testing0._1.Controllers
         }
 
         // GET: Rit/Create
+        [Authorize(Roles = "Admin")]
         public IActionResult Create()
         {
             ViewData["RaceID"] = new SelectList(_context.Races, "RaceID", "Naam");
@@ -56,6 +60,7 @@ namespace Testing0._1.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("RitID,Afstand,Naam,Datum,Profielfoto,RitsoortID,RaceID")] Rit rit)
         {
@@ -71,6 +76,7 @@ namespace Testing0._1.Controllers
         }
 
         // GET: Rit/Edit/5
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -92,6 +98,7 @@ namespace Testing0._1.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("RitID,Afstand,Naam,Datum,Profielfoto,RitsoortID,RaceID")] Rit rit)
         {
@@ -126,6 +133,7 @@ namespace Testing0._1.Controllers
         }
 
         // GET: Rit/Delete/5
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)

@@ -71,9 +71,18 @@
                                 @Html.DisplayFor(modelItem => item.Rit.Ritsoort.Naam)
                             </td>
                             <td>
-                                <a asp-controller="Rit" asp-action="Edit" asp-route-id="@item.RitID">Edit</a> |
-                                <a asp-controller="Rit" asp-action="Details" asp-route-id="@item.RitID">Details</a> |
-                                <a asp-controller="Rit" asp-action="Delete" asp-route-id="@item.RitID">Delete</a>
+                                @if (this.User.IsInRole("Admin"))
+                                {
+                                    <a asp-controller="Rit" asp-action="Edit" asp-route-id="@item.RitID">Edit</a>
+                                }
+                                @if (this.User.IsInRole("Admin"))
+                                {
+                                    <a asp-controller="Rit" asp-action="Details" asp-route-id="@item.RitID">Details</a>
+                                }
+                                @if (this.User.IsInRole("Admin"))
+                                {
+                                    <a asp-controller="Rit" asp-action="Delete" asp-route-id="@item.RitID">Delete</a>
+                                }
                             </td>
                         </tr>
 
@@ -89,8 +98,11 @@
 
 <div>
     <a asp-action="Klassement" asp-route-id="@raceid">Klassement bekijken</a> |
-    <a asp-action="Index">Back to Races</a> |
+    <a asp-action="Index">Naar Races</a> |
+    @if (this.User.IsInRole("Admin"))
+    {
     <a asp-controller="Race" asp-action="Index">Race overview (admin)</a>
+    }
 </div>
 
 

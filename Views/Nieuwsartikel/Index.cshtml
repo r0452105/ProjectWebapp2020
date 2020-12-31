@@ -4,15 +4,13 @@
     ViewData["Title"] = "Index";
     int x = 0;
 }
-<h1>News</h1>
-<hr>
 <div class="card-group">
     @foreach (var item in Model)
     {
         if (x < 1)
         {
             <div class="row">
-                <div class="card" style="width: 45rem; margin-left:15rem; margin-right:15rem;">
+                <div class="card" style="width: 68rem; margin-top:3rem;">
                     <img src="@Html.DisplayFor(modelItem => item.Artikelfoto)" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">@Html.DisplayFor(modelItem => item.Titel)</h5>
@@ -26,7 +24,7 @@
         else
         {
             <div class="card-group">
-                <div class="card" style="width: 23rem; margin-left:auto; margin-right:auto;  margin-top:3rem; height:30rem;">
+                <div class="card" style="width: 21rem; margin-left:0.5rem; margin-right:0.5rem;  margin-top:3rem; height:30rem;">
                     <img src="@Html.DisplayFor(modelItem => item.Artikelfoto)" class="card-img-top" alt="..." width="300" height="300">
                     <div class="card-body">
                         <h5 class="card-title">@Html.DisplayFor(modelItem => item.Titel)</h5>
@@ -40,7 +38,6 @@
 </div>
  <hr />
 <div class="container">
-    <hr>
     <div class="row">
         <p>
             @if (this.User.IsInRole("Admin"))
