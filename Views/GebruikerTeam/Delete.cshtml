@@ -3,6 +3,8 @@
 @{
     ViewData["Title"] = "Delete";
 }
+<h1>Placeholder</h1>
+<h1>Placeholder</h1>
 
 <h1>Delete</h1>
 
@@ -11,20 +13,20 @@
     <h4>GebruikerTeam</h4>
     <hr />
     <dl class="row">
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Team)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Team.TeamID)
-        </dd class>
-        <dt class = "col-sm-2">
+        </dd>
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Gebruiker)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Gebruiker.Naam)
-        </dd class>
+        </dd>
     </dl>
-    
+
     <form asp-action="Delete">
         <input type="hidden" asp-for="GebruikerTeamID" />
         <input type="submit" value="Delete" class="btn btn-danger" /> |

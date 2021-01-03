@@ -9,6 +9,8 @@
     {
         while (x == 0)
         {
+            <h1>Placeholder</h1>
+            <h1>Placeholder</h1>
             <h2>@Html.DisplayFor(modelItem => item.Rit.Race.Naam)</h2>
             x += 1;
             raceid = item.Rit.RaceID;
@@ -101,7 +103,7 @@
     <a asp-action="Index">Naar Races</a> |
     @if (this.User.IsInRole("Admin"))
     {
-    <a asp-controller="Race" asp-action="Index">Race overview (admin)</a>
+        <a asp-controller="Race" asp-action="Index">Race overview (admin)</a>
     }
 </div>
 

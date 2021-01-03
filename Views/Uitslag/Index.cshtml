@@ -3,6 +3,8 @@
 @{
     ViewData["Title"] = "Index";
 }
+<h1>Placeholder</h1>
+<h1>Placeholder</h1>
 
 <h1>Index</h1>
 
@@ -14,12 +16,12 @@
 
     <p>
         Name  : @Html.TextBox("searchname")
-        <input name="kut" type="submit" value="Search"/>
+        <input name="kut" type="submit" value="Search" />
     </p>
 
 
 }
-<table class="table">
+<table class="table" id="listtable">
     <thead>
         <tr>
             <th>
@@ -42,14 +44,14 @@
         {
             <tr>
                 <td>
-                    <a asp-controller ="Gebruiker" asp-action="Details" asp-route-id="@item.GebruikerID">@Html.DisplayFor(modelItem => item.Gebruiker.VolledigeNaam)</a>
+                    <a asp-controller="Gebruiker" asp-action="Details" asp-route-id="@item.GebruikerID">@Html.DisplayFor(modelItem => item.Gebruiker.VolledigeNaam)</a>
 
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Resultaat)
                 </td>
                 <td>
-                    <a asp-controller ="Rit" asp-action="Details" asp-route-id="@item.RitID">@Html.DisplayFor(modelItem => item.Rit.Naam)</a>
+                    <a asp-controller="Rit" asp-action="Details" asp-route-id="@item.RitID">@Html.DisplayFor(modelItem => item.Rit.Naam)</a>
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Algemeenklassement)
