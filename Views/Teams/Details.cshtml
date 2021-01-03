@@ -3,17 +3,21 @@
 @{
     ViewData["Title"] = "Details";
 }
+<h1>Placeholder</h1>
+<p>
+    Placeholder
+</p>
 
-<h1>Details</h1>
+<h1>Teamleden @Html.DisplayFor(model => model.Naam)</h1>
 
 <div>
     <h4>Team</h4>
     <hr />
     <dl class="row">
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Naam)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Naam)
         </dd>
     </dl>

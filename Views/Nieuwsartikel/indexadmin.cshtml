@@ -3,13 +3,14 @@
 @{
     ViewData["Title"] = "Index";
 }
-
-<h1>Index</h1>
-
+<h1>Placeholder</h1>
 <p>
-    <a asp-action="Create">Create New</a>
+    Placeholder
 </p>
-<table class="table">
+
+<h1>Lijst alle artikels</h1>
+
+<table class="table" id="listtable">
     <thead>
         <tr>
             <th>
@@ -20,9 +21,6 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.KorteOmschrijving)
-            </th>
-            <th>
-                Etappes
             </th>
             <th></th>
         </tr>
@@ -49,3 +47,5 @@
         }
     </tbody>
 </table>
+
+<a asp-action="Create">Create New</a>

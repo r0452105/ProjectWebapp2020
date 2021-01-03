@@ -3,13 +3,17 @@
 @{
     ViewData["Title"] = "Index";
 }
+<h1>Placeholder</h1>
+<p>
+    Placeholder
+</p>
 
-<h1>Index</h1>
+<h1>Gebruik en z'n team(s) combo</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
 </p>
-<table class="table">
+<table class="table" id="listtable">
     <thead>
         <tr>
             <th>
@@ -22,20 +26,21 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                <a asp-action="TeamledenDetails" asp-route-id="@item.GebruikerTeamID">@Html.DisplayFor(modelItem => item.Team.Naam)</a>
-            </td>
-            <td>
-                <a asp-action="Details" asp-route-id="@item.GebruikerTeamID">@Html.DisplayFor(modelItem => item.Gebruiker.VolledigeNaam)</a>
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.GebruikerTeamID">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.GebruikerTeamID">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.GebruikerTeamID">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <a asp-action="TeamledenDetails" asp-route-id="@item.GebruikerTeamID">@Html.DisplayFor(modelItem => item.Team.Naam)</a>
+                </td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.GebruikerTeamID">@Html.DisplayFor(modelItem => item.Gebruiker.VolledigeNaam)</a>
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.GebruikerTeamID">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.GebruikerTeamID">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.GebruikerTeamID">Delete</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
