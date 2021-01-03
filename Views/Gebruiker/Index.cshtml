@@ -2,15 +2,14 @@
 @{
     ViewData["Title"] = "Index";
 }
+<h1>Placeholder</h1>
+<p>
+    Placeholder
+</p>
 
-<h1>Index</h1>
-@if (this.User.IsInRole("Admin"))
-{
-    <p>
-        <a asp-action="Create">Create New</a>
-    </p>
-}
-<table class="table">
+<h1 class="text-center">Renners</h1>
+
+<table class="table" id="listtable">
     <thead>
         <tr>
             <th>
@@ -45,7 +44,7 @@
                     }
                     @if (this.User.IsInRole("Admin"))
                     {
-                        <a asp-action="Details" asp-route-id="@item.GebruikerID">Details</a> 
+                        <a asp-action="Details" asp-route-id="@item.GebruikerID">Details</a>
                     }
                     @if (this.User.IsInRole("Admin"))
                     {
@@ -60,7 +59,10 @@
 
 @if (this.User.IsInRole("Admin"))
 {
-<p>
     <a asp-action="Indexadmin">Overview Renners (Admin)</a>
-</p>
+}
+|
+@if (this.User.IsInRole("Admin"))
+{
+    <a asp-action="Create">Create New Rider</a>
 }

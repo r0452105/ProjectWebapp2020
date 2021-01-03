@@ -4,14 +4,14 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
-@if (this.User.IsInRole("Admin"))
-{
+<h1>Placeholder</h1>
 <p>
-    <a asp-action="Create">Create New</a>
+    Placeholder
 </p>
-}
-<table class="table">
+
+<h1 class="text-center">Teams</h1>
+
+<table class="table" id="listtable">
     <thead>
         <tr>
             <th>
@@ -19,6 +19,8 @@
             </th>
             <th>
                 Race
+            </th>
+            <th>
             </th>
         </tr>
     </thead>
@@ -39,14 +41,20 @@
                     }
                     @if (this.User.IsInRole("Admin"))
                     {
-                    <a asp-action="Details" asp-route-id="@item.TeamID">Details</a>
+                        <a asp-action="Details" asp-route-id="@item.TeamID">Details</a>
                     }
-                    @if(this.User.IsInRole("Admin"))
+                    @if (this.User.IsInRole("Admin"))
                     {
-                    <a asp-action="Delete" asp-route-id="@item.TeamID">Delete</a>
+                        <a asp-action="Delete" asp-route-id="@item.TeamID">Delete</a>
                     }
                 </td>
             </tr>
         }
     </tbody>
 </table>
+@if (this.User.IsInRole("Admin"))
+{
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>
+}

@@ -2,9 +2,14 @@
 @{
     ViewData["Title"] = "Index";
 }
+<h1>Placeholder</h1>
+<p>
+    Placeholder
+</p>
+
 <h1 class="text-center">Aquadraat Ranking 2020</h1>
 
-<table class="table">
+<table class="table" id="listtable">
     <thead>
         <tr>
             <th>
@@ -49,7 +54,7 @@
 </table>
 @if (this.User.IsInRole("Admin"))
 {
-<p>
-    <a asp-action="Indexadmin">Overview Renners (Admin)</a>
-</p>
+    <p>
+        <a asp-action="Indexadmin">Overview Renners (Admin)</a>
+    </p>
 }

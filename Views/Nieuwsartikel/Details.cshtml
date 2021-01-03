@@ -4,26 +4,46 @@
     ViewData["Title"] = "Details";
 }
 
-<div>
-    <h2>@Html.DisplayNameFor(model => model.Titel)</h2>
+<article id="detailarticle" class="small-12 large-9 cell sc--normal page-article">
 
-    <img src="@Html.DisplayFor(model => model.Artikelfoto)"  alt="...">
+    <header class="vrt-article__header">
+        <div class="title">
+            <h1 class="vrt-title">
+                @Html.DisplayFor(model => model.Titel)
+            </h1>
+        </div>
+        <div>
+            <div class="grid-x grid-margin-x grid-padding-y">
+              <div class="cell small-12 medium-12">
+                    <div class="vrt-image vrt-image--crop vrt-image--no-title js-zoom">
+                       <img id="detailimageborder" sizes="auto" data-parent-fit="width" src="@Html.DisplayFor(model => model.Artikelfoto)" alt="" class="image">
+                    </div>
+                    <p>Getty Images</p>
+              </div>
+            </div>
+        </div>
+    </header>
 
-    <h5>@Html.DisplayNameFor(model => model.KorteOmschrijving)</h5>
-
-    <p>@Html.DisplayFor(model => model.ArtikelTekst)</p>
-</div>
-<div>
-    @if (this.User.IsInRole("Admin"))
-    {
-        <a asp-action="Edit" asp-route-id="@Model.NieuwsartikelID">Edit this article</a>
-    }
-    @if (this.User.IsInRole("Admin"))
-    {
-        <a asp-action="Index">Back to News</a>
-    }
-    @if (this.User.IsInRole("Admin"))
-    {
-        <a asp-action="Indexadmin">Overview News (Admin)</a>
-    }
-</div>
+    <section>
+        <div class="card" size="auto">
+            <h3 class="card-header">@Html.DisplayFor(model => model.KorteOmschrijving)</h3>
+            <p class="card-text m-5">@Html.DisplayFor(model => model.ArtikelTekst)</p>
+            <div class="m-1">
+                @if (this.User.IsInRole("Admin"))
+                {
+                    <a asp-action="Edit" asp-route-id="@Model.NieuwsartikelID">Edit this article</a>
+                }
+                |
+                @if (this.User.IsInRole("Admin"))
+                {
+                    <a asp-action="Index">Back to News</a>
+                }
+                |
+                @if (this.User.IsInRole("Admin"))
+                {
+                    <a asp-action="Indexadmin">Overview News (Admin)</a>
+                }
+            </div>
+        </div>
+    </section>
+</article>
