@@ -25,7 +25,7 @@ namespace Testing0._1.Controllers.api
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Gebruiker>>> GetGebruikers()
         {
-            return await _context.Gebruikers.ToListAsync();
+            return await _context.Gebruikers.Include(r => r.GebruikerTeams).ToListAsync();
         }
 
         // GET: api/Gebruiker/5
