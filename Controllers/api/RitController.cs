@@ -7,6 +7,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Testing0._1.Data;
 using Testing0._1.Models;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+
 
 namespace Testing0._1.Controllers.api
 {
@@ -29,6 +32,7 @@ namespace Testing0._1.Controllers.api
         }
 
         // GET: api/Rit/5
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         [HttpGet("{id}")]
         public async Task<ActionResult<Rit>> GetRit(int id)
         {

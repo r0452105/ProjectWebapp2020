@@ -7,6 +7,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Testing0._1.Data;
 using Testing0._1.Models;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+
 
 namespace Testing0._1.Controllers.api
 {
@@ -22,6 +25,7 @@ namespace Testing0._1.Controllers.api
         }
 
         // GET: api/Nieuwsartikel
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Nieuwsartikel>>> GetNieuwsartikels()
         {
