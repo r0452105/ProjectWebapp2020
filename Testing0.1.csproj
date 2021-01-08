@@ -31,7 +31,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="ViewModels\" />
     <Folder Include="wwwroot\images\Parcours\" />
     <Folder Include="wwwroot\images\Renners\" />
   </ItemGroup>
