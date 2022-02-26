@@ -28,7 +28,9 @@ using Testing0._1.Models;
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"1ec469978d65df5053065a441e426c89d4876f69", @"/Views/Gebruiker/Indexadmin.cshtml")]
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"3cf133d7dff7d2b172857d790f1efd3b14f77bf8", @"/Views/_ViewImports.cshtml")]
+    #nullable restore
     public class Views_Gebruiker_Indexadmin : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<IEnumerable<Testing0._1.Models.Gebruiker>>
+    #nullable disable
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-action", "Create", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_1 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-action", "Details", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -68,7 +70,7 @@ using Testing0._1.Models;
 #line hidden
 #nullable disable
             WriteLiteral("<h1>Placeholder</h1>\r\n<p>Placeholder</p>\r\n<h1>Index</h1>\r\n\r\n<p>\r\n    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1ec469978d65df5053065a441e426c89d4876f694933", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1ec469978d65df5053065a441e426c89d4876f694979", async() => {
                 WriteLiteral("Create New");
             }
             );
@@ -125,7 +127,7 @@ using Testing0._1.Models;
 #line hidden
 #nullable disable
             WriteLiteral("            <tr>\r\n                <td>\r\n                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1ec469978d65df5053065a441e426c89d4876f697951", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1ec469978d65df5053065a441e426c89d4876f697997", async() => {
 #nullable restore
 #line 38 "C:\Users\Gebruiker\Documents\GitHub\ProjectWebapp2020\Views\Gebruiker\Indexadmin.cshtml"
                                                                         Write(Html.DisplayFor(modelItem => item.Voornaam));
@@ -162,7 +164,7 @@ using Testing0._1.Models;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                </td>\r\n                <td>\r\n                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1ec469978d65df5053065a441e426c89d4876f6910446", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1ec469978d65df5053065a441e426c89d4876f6910492", async() => {
 #nullable restore
 #line 41 "C:\Users\Gebruiker\Documents\GitHub\ProjectWebapp2020\Views\Gebruiker\Indexadmin.cshtml"
                                                                         Write(Html.DisplayFor(modelItem => item.Naam));
@@ -207,7 +209,7 @@ using Testing0._1.Models;
 #line hidden
 #nullable disable
             WriteLiteral("\r\n                </td>\r\n                <td>\r\n                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1ec469978d65df5053065a441e426c89d4876f6913284", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1ec469978d65df5053065a441e426c89d4876f6913330", async() => {
 #nullable restore
 #line 47 "C:\Users\Gebruiker\Documents\GitHub\ProjectWebapp2020\Views\Gebruiker\Indexadmin.cshtml"
                                        Write(Html.DisplayFor(modelItem => item.Profielfoto));
@@ -229,7 +231,7 @@ using Testing0._1.Models;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                </td>\r\n                <td>\r\n                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1ec469978d65df5053065a441e426c89d4876f6914732", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1ec469978d65df5053065a441e426c89d4876f6914778", async() => {
 #nullable restore
 #line 50 "C:\Users\Gebruiker\Documents\GitHub\ProjectWebapp2020\Views\Gebruiker\Indexadmin.cshtml"
                                        Write(Html.DisplayFor(modelItem => item.Score));
@@ -251,7 +253,7 @@ using Testing0._1.Models;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                </td>\r\n                <td>\r\n                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1ec469978d65df5053065a441e426c89d4876f6916174", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1ec469978d65df5053065a441e426c89d4876f6916220", async() => {
                 WriteLiteral("Edit");
             }
             );
@@ -282,7 +284,7 @@ using Testing0._1.Models;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1ec469978d65df5053065a441e426c89d4876f6918363", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1ec469978d65df5053065a441e426c89d4876f6918409", async() => {
                 WriteLiteral("Details");
             }
             );
@@ -313,7 +315,7 @@ using Testing0._1.Models;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1ec469978d65df5053065a441e426c89d4876f6920558", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1ec469978d65df5053065a441e426c89d4876f6920604", async() => {
                 WriteLiteral("Delete");
             }
             );
@@ -354,16 +356,26 @@ using Testing0._1.Models;
             WriteLiteral("    </tbody>\r\n</table>\r\n");
         }
         #pragma warning restore 1998
+        #nullable restore
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
-        public global::Microsoft.AspNetCore.Mvc.ViewFeatures.IModelExpressionProvider ModelExpressionProvider { get; private set; }
+        public global::Microsoft.AspNetCore.Mvc.ViewFeatures.IModelExpressionProvider ModelExpressionProvider { get; private set; } = default!;
+        #nullable disable
+        #nullable restore
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
-        public global::Microsoft.AspNetCore.Mvc.IUrlHelper Url { get; private set; }
+        public global::Microsoft.AspNetCore.Mvc.IUrlHelper Url { get; private set; } = default!;
+        #nullable disable
+        #nullable restore
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
-        public global::Microsoft.AspNetCore.Mvc.IViewComponentHelper Component { get; private set; }
+        public global::Microsoft.AspNetCore.Mvc.IViewComponentHelper Component { get; private set; } = default!;
+        #nullable disable
+        #nullable restore
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
-        public global::Microsoft.AspNetCore.Mvc.Rendering.IJsonHelper Json { get; private set; }
+        public global::Microsoft.AspNetCore.Mvc.Rendering.IJsonHelper Json { get; private set; } = default!;
+        #nullable disable
+        #nullable restore
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
-        public global::Microsoft.AspNetCore.Mvc.Rendering.IHtmlHelper<IEnumerable<Testing0._1.Models.Gebruiker>> Html { get; private set; }
+        public global::Microsoft.AspNetCore.Mvc.Rendering.IHtmlHelper<IEnumerable<Testing0._1.Models.Gebruiker>> Html { get; private set; } = default!;
+        #nullable disable
     }
 }
 #pragma warning restore 1591
