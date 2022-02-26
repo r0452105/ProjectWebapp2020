@@ -5,11 +5,11 @@ using System.Threading.Tasks;
 
 namespace Testing0._1.Models
 {
-    public class Nieuwsartikel
+    public class Nieuwsartikel //should've put in more comments
     {
         public int NieuwsartikelID { get; set; }
         public string Titel { get; set; }
-        public string  KorteOmschrijving { get; set; }
+        public string KorteOmschrijving { get; set; }
         public string ArtikelTekst { get; set; }
         public string Artikelfoto { get; set; }
     }
