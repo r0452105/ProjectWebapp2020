@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
     "",
+    "\\Helpers",
     "\\wwwroot"
   ],
+  "SelectedNode": "\\Helpers\\AppSettings.cs",
   "PreviewInSolutionExplorer": false
 }
